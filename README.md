@@ -1,6 +1,6 @@
 # Qaxe 
 
-Qaxe is a  quad-BM1366 Miner based on the BitAxe.
+Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piaxe) and [BitAxe](https://github.com/skot/bitaxe/tree/ultra-v1.3).
 
 ![image](https://github.com/shufps/qaxe/assets/3079832/4f741daf-940c-4ba4-a477-e8de91f4513c)
 
