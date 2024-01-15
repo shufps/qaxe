@@ -1,6 +1,6 @@
 # Qaxe 
 
-Qaxe is a  quad-BM1366 Miner based on the BitAxe.
+Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piaxe) and [BitAxe](https://github.com/skot/bitaxe/tree/ultra-v1.3).
 
 ![image](https://github.com/shufps/qaxe/assets/3079832/4f741daf-940c-4ba4-a477-e8de91f4513c)
 
@@ -15,7 +15,14 @@ TBD
 Mining Client
 =============
 
-<img src="https://github.com/shufps/piaxe-miner/assets/3079832/8d34ec13-15bd-4dd4-abd3-9588c823c494" width="400px"/>
+![image](https://github.com/shufps/qaxe/assets/3079832/69147aaf-5250-4845-a149-7aad6bb446b1)
+
+
 
 Stratum Mining Client:<br>
 https://github.com/shufps/piaxe-miner
+
+Misc
+====
+If you like this project and want to support future work, feel free to donate to:
+`bc1q7n70rumyv6lvu8avpml0c3uggvssfu52egum3q`
