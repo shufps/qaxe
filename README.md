@@ -1,0 +1,2 @@
+# qaxe
+qaxe bitcoin miner
