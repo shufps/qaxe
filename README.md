@@ -15,7 +15,8 @@ TBD
 Mining Client
 =============
 
-<img src="https://github.com/shufps/piaxe-miner/assets/3079832/8d34ec13-15bd-4dd4-abd3-9588c823c494" width="400px"/>
+![image](https://github.com/shufps/qaxe/assets/3079832/dcb80265-122f-43da-849c-f017fe902d6f)
+
 
 Stratum Mining Client:<br>
 https://github.com/shufps/piaxe-miner
