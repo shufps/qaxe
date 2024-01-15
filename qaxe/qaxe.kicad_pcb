@@ -91,7 +91,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "../Manufacturing Files/gerbers/")
+      (outputdirectory "../gerbers/")
     )
   )
 
@@ -5102,7 +5102,7 @@
     )
   )
 
-  (footprint "myfootprints:dummy" (layer "F.Cu")
+  (footprint "myfootprints:dummy" locked (layer "F.Cu")
     (tstamp 8f630ccc-76bd-426b-b3d2-f5b726ea3285)
     (at 95 121.9)
     (attr through_hole)
@@ -5116,7 +5116,7 @@
     )
     (fp_circle (center 0 0) (end 0.5 0)
       (stroke (width 0.12) (type solid)) (fill none) (layer "Eco1.User") (tstamp 18171c03-b703-45a6-b462-f06d7836e4d4))
-    (pad "" smd circle (at 0 0) (size 1.524 1.524) (layers "Dwgs.User") (tstamp 2c9c2bb0-6431-4eb5-845f-55a00bb4b825))
+    (pad "" smd circle locked (at 0 0) (size 1.524 1.524) (layers "Dwgs.User") (tstamp 2c9c2bb0-6431-4eb5-845f-55a00bb4b825))
     (model "./3d/lga115x.step"
       (offset (xyz 0 26 79))
       (scale (xyz 1 1 1))
