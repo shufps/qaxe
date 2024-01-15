@@ -2,12 +2,15 @@
 
 Qaxe is a  quad-BM1366 Miner based on the BitAxe.
 
+![image](https://github.com/shufps/qaxe/assets/3079832/4f741daf-940c-4ba4-a477-e8de91f4513c)
 
+**rev1:** is tested and operating at about 1.7TH/s average speed.<br>
+**rev2:** assembly/testing not yet finished.<br>
 
-rev1: is tested and operating at about 1.7TH/s average speed.
-rev2: not assembled completly
+Installation
+=============
 
-
+TBD
 
 Mining Client
 =============
