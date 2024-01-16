@@ -13,9 +13,10 @@ Installation
 =============
 
 As programming/debug adapter the Picoprobe firmware running on a Raspi Pico works best: <br>
-https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md
+https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md / https://github.com/raspberrypi/picoprobe/releases/tag/picoprobe-cmsis-v1.0.3
 <br>
-There also is a little board with only 3 parts that gives a nice solution to flash the Qaxe:<br>
+<br>
+There also is a little board with only 3 parts that gives a nice low-cost solution to flash the Qaxe:<br>
 https://github.com/shufps/raspi-pico-dap
 
 
