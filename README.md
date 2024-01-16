@@ -7,8 +7,16 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 **rev1:** is tested and operating at about 1.7TH/s average speed.<br>
 **rev2:** assembly/testing not yet finished.<br>
 
+
+
 Installation
 =============
+
+The board has a 2x5 1.27mm pin socket connector with the pinout of *some* STLinkV2 clone.<br>
+<br>
+But there is a small mini board for a Raspi Pico with socket and cable that provides CMSIS-DAP:<br>
+https://github.com/shufps/raspi-pico-dap
+
 
 TBD
 
