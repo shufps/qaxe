@@ -195,7 +195,7 @@ let mut config = embassy_stm32::Config::default();
     let ch1 = PwmPin::new_ch1(p.PA0, OutputType::PushPull);
     let mut pwm1 = SimplePwm::new(p.TIM2, Some(ch1), None, None, None, khz(10), Default::default());
     pwm1.set_polarity(PWMChannel::Ch1, OutputPolarity::ActiveLow);
-    pwm1.set_duty(PWMChannel::Ch1, pwm1.get_max_duty());
+    pwm1.set_duty(PWMChannel::Ch1, pwm1.get_max_duty() >> 1);
     pwm1.enable(PWMChannel::Ch1);
 
     let i2c = I2c::new(
