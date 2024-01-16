@@ -12,9 +12,9 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 Installation
 =============
 
-The board has a 2x5 1.27mm pin socket connector with the pinout of *some* STLinkV2 clone.<br>
+As programming/debug adapter the Picoprobe firmware running on a Raspi Pico works best: https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md
 <br>
-But there is a small mini board for a Raspi Pico with socket and cable that provides CMSIS-DAP:<br>
+There also is a little board with only 3 parts that gives a nice solution to flash the Qaxe:<br>
 https://github.com/shufps/raspi-pico-dap
 
 
