@@ -26,7 +26,8 @@ TBD
 Mining Client
 =============
 
-![image](https://github.com/shufps/qaxe/assets/3079832/69147aaf-5250-4845-a149-7aad6bb446b1)
+![image](https://github.com/shufps/qaxe/assets/3079832/5afb98b6-9153-454f-adc0-137706cad032)
+
 
 
 
