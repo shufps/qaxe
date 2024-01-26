@@ -148,7 +148,7 @@ async fn main(spawner: Spawner) {
     let mut usb = builder.build();
 
     let mut config = usart::Config::default();
-    config.baudrate = 921600;
+    config.baudrate = 115200;
 
     static TX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
     let tx_buf = &mut TX_BUF.init([0; 64])[..];
