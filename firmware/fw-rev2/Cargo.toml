@@ -26,6 +26,7 @@ quick-protobuf = { version = "0.8.1", default-features = false }
 alloc-cortex-m = "0.4.4"
 
 embedded-io-async = { version = "0.6.1" }
+static_cell = { version = "2" }
 
 [profile.release]
 debug = 2

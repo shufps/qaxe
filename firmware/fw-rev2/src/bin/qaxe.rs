@@ -13,7 +13,7 @@ use embassy_stm32::rcc::*;
 use embassy_stm32::time::{khz, Hertz};
 use embassy_stm32::timer::simple_pwm::{PwmPin, SimplePwm};
 use embassy_stm32::timer::Channel as PWMChannel;
-use embassy_stm32::usart::Uart;
+use embassy_stm32::usart::BufferedUart;
 use embassy_stm32::usb::{Driver, Instance};
 use embassy_stm32::{bind_interrupts, peripherals, usart, usb};
 use embassy_sync::blocking_mutex::raw::{CriticalSectionRawMutex, ThreadModeRawMutex};
@@ -21,6 +21,8 @@ use embassy_sync::channel::Channel;
 use embassy_sync::mutex::Mutex;
 use embassy_sync::signal::Signal;
 use embassy_time::Timer;
+use embedded_io_async::Read;
+use static_cell::StaticCell;
 
 use embassy_stm32::timer::OutputPolarity;
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
@@ -46,7 +48,7 @@ static ALLOCATOR: CortexMHeap = CortexMHeap::empty();
 
 bind_interrupts!(struct Irqs {
     USB_LP => usb::InterruptHandler<peripherals::USB>;
-    USART1 => usart::InterruptHandler<peripherals::USART1>;
+    USART1 => usart::BufferedInterruptHandler<peripherals::USART1>;
     I2C2_EV => i2c::EventInterruptHandler<peripherals::I2C2>;
     I2C2_ER => i2c::ErrorInterruptHandler<peripherals::I2C2>;
 
@@ -151,11 +153,12 @@ async fn main(spawner: Spawner) {
     let mut config = usart::Config::default();
     config.baudrate = 115200;
 
-    //let usart = BufferedUart::new(p.USART1, Irqs, p.PA10, p.PA9, tx_buf, rx_buf, config).unwrap();
-    let usart = Uart::new(
-        p.USART1, p.PA10, p.PA9, Irqs, p.DMA1_CH4, p.DMA1_CH5, config,
-    )
-    .unwrap();
+    static TX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
+    let tx_buf = &mut TX_BUF.init([0; 64])[..];
+    static RX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
+    let rx_buf = &mut RX_BUF.init([0; 64])[..];
+
+    let usart = BufferedUart::new(p.USART1, Irqs, p.PA10, p.PA9, tx_buf, rx_buf, config).unwrap();
     let (mut tx_ctrl, mut rx_ctrl) = usart.split();
 
     // Run the USB device.
@@ -247,15 +250,12 @@ async fn main(spawner: Spawner) {
     let relay_sender_fut = async {
         loop {
             // collect up to 4 responses to catch all chip responses
-            const MAX_NUM_RESPONSES: usize = 4;
-
             sender.wait_connection().await;
             info!("Connected relay sender");
 
             'outer: loop {
-                let mut usart_buf = [0; MAX_NUM_RESPONSES * 11];
-
-                match rx_ctrl.read_until_idle(&mut usart_buf).await {
+                let mut usart_buf = [0; 11];
+                match rx_ctrl.read_exact(&mut usart_buf).await {
                     Ok(_) => (),
                     Err(e) => {
                         error!("Error reading from USART: {:?}", e);
@@ -263,18 +263,15 @@ async fn main(spawner: Spawner) {
                     }
                 };
 
-                for i in 0..MAX_NUM_RESPONSES {
-                    let si = i * 11;
-                    if usart_buf[si] != 0xaa || usart_buf[si + 1] != 0x55 {
-                        debug!("uart data doesn't start with 0xaa 0x55 ... ignoring chunk");
-                        continue;
-                    }
+                if usart_buf[0] != 0xaa || usart_buf[1] != 0x55 {
+                    debug!("uart data doesn't start with 0xaa 0x55 ... ignoring chunk");
+                    continue;
+                }
 
-                    debug!("USART -> USB: {:x}", &usart_buf[si..si + 11]);
-                    if let Err(e) = sender.write_packet(&usart_buf[si..si + 11]).await {
-                        error!("Error writing to USB: {:?}", e);
-                        break 'outer;
-                    }
+                debug!("USART -> USB: {:x}", &usart_buf[..]);
+                if let Err(e) = sender.write_packet(&usart_buf[..]).await {
+                    error!("Error writing to USB: {:?}", e);
+                    break 'outer;
                 }
             }
         }
