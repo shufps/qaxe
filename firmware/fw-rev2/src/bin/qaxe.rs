@@ -2,7 +2,6 @@
 #![no_main]
 
 use core::option::Option::Some;
-use core::ptr::write_volatile;
 use defmt::{panic, *};
 use defmt_rtt as _; // global logger
 use embassy_executor::Spawner;
@@ -16,7 +15,7 @@ use embassy_stm32::timer::simple_pwm::{PwmPin, SimplePwm};
 use embassy_stm32::timer::Channel as PWMChannel;
 use embassy_stm32::usart::Uart;
 use embassy_stm32::usb::{Driver, Instance};
-use embassy_stm32::{bind_interrupts, peripherals, usart, usb, Config};
+use embassy_stm32::{bind_interrupts, peripherals, usart, usb};
 use embassy_sync::blocking_mutex::raw::{CriticalSectionRawMutex, ThreadModeRawMutex};
 use embassy_sync::channel::Channel;
 use embassy_sync::mutex::Mutex;
@@ -74,11 +73,11 @@ static TEMP1: Mutex<ThreadModeRawMutex, u16> = Mutex::new(0u16);
 static TEMP2: Mutex<ThreadModeRawMutex, u16> = Mutex::new(0u16);
 
 struct PWMControl {
-    channel: i32,
-    value: u16,
+    pwm1_value: u16,
+    pwm2_value: u16,
 }
 
-static PWM_CTRL_CHANNEL: Channel<ThreadModeRawMutex, PWMControl, 2> = Channel::new();
+static PWM_CTRL_CHANNEL: Channel<ThreadModeRawMutex, PWMControl, 1> = Channel::new();
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
@@ -291,7 +290,7 @@ async fn main(spawner: Spawner) {
 }
 
 #[embassy_executor::task]
-async fn power_good_task(mut pgood_1v2: Input<'static, PA3>, mut pgood_led: Output<'static, PA5>) {
+async fn power_good_task(pgood_1v2: Input<'static, PA3>, mut pgood_led: Output<'static, PA5>) {
     loop {
         let mut pgood_state = PGOOD.lock().await;
         if pgood_1v2.is_high() {
@@ -305,6 +304,7 @@ async fn power_good_task(mut pgood_1v2: Input<'static, PA3>, mut pgood_led: Outp
         Timer::after_millis(500).await;
     }
 }
+
 #[embassy_executor::task]
 async fn power_manager(mut run_1v2: Output<'static, PA2>) {
     loop {
@@ -343,24 +343,24 @@ async fn reset_manager(mut reset: Output<'static, PB13>) {
 async fn pwm_manager(mut pwm1: SimplePwm<'static, TIM2>) {
     loop {
         let pwm = PWM_CTRL_CHANNEL.receive().await;
-
-        match pwm.channel {
-            1 => {
-                let max_duty = pwm1.get_max_duty() as u32;
-                let duty = max_duty * pwm.value as u32 / 100;
-                info!("pwm1: {}, max: {}", duty, max_duty);
-                pwm1.set_duty(
-                    PWMChannel::Ch1,
-                    if duty <= max_duty {
-                        duty as u16
-                    } else {
-                        max_duty as u16
-                    },
-                );
-            }
-            2 => { /* NOP */ }
-            _ => { /* NOP */ }
-        };
+        let max_duty = pwm1.get_max_duty() as u32;
+        for i in 0..2 {
+            let (channel, value) = match i {
+                0 => (PWMChannel::Ch1, pwm.pwm1_value),
+                1 => (PWMChannel::Ch2, pwm.pwm2_value),
+                _ => (PWMChannel::Ch3, 0),
+            };
+            let duty = max_duty * value as u32 / 100;
+            info!("pwm{}: {}, max: {}", i, duty, max_duty);
+            pwm1.set_duty(
+                channel,
+                if duty <= max_duty {
+                    duty as u16
+                } else {
+                    max_duty as u16
+                },
+            );
+        }
 
         Timer::after_millis(500).await;
     }
@@ -398,7 +398,7 @@ impl Errors {
     }
 }
 enum Commands {
-    NOP = 0,
+    Nop = 0,
     Control = 1,
     Status = 2,
     Reset = 3,
@@ -408,7 +408,7 @@ enum Commands {
 impl Commands {
     fn from_i32(value: i32) -> Option<Commands> {
         match value {
-            0 => Some(Commands::NOP),
+            0 => Some(Commands::Nop),
             1 => Some(Commands::Control),
             2 => Some(Commands::Status),
             3 => Some(Commands::Reset),
@@ -443,7 +443,7 @@ async fn process_request<'a>(
     }
 
     match op.unwrap() {
-        Commands::NOP => {
+        Commands::Nop => {
             // nop
         }
         Commands::Control => {
@@ -460,17 +460,12 @@ async fn process_request<'a>(
                 _ => PowerManagerCommand::BuckOn,
             });
 
-            let pwm1 = PWMControl {
-                channel: 1,
-                value: cmd.pwm1 as u16,
-            };
-            PWM_CTRL_CHANNEL.send(pwm1).await;
-
-            let pwm2 = PWMControl {
-                channel: 2,
-                value: cmd.pwm2 as u16,
-            };
-            PWM_CTRL_CHANNEL.send(pwm2).await;
+            PWM_CTRL_CHANNEL
+                .send(PWMControl {
+                    pwm1_value: cmd.pwm1 as u16,
+                    pwm2_value: cmd.pwm2 as u16,
+                })
+                .await;
         }
         Commands::Status => {
             info!("status");
@@ -544,7 +539,7 @@ async fn json_rpc<'d, T: Instance + 'd>(
         }
 
         let serialized_len = response.get_size() + 1 /* varint */;
-        if let Err(_) = quick_protobuf::serialize_into_slice(&response, &mut response_bytes) {
+        if quick_protobuf::serialize_into_slice(&response, &mut response_bytes).is_err() {
             error!("{}", Errors::to_string(&Errors::ErrorSerializingResponse));
             continue;
         }
@@ -573,7 +568,7 @@ async fn temp_manager(mut i2c: I2c<'static, I2C2>) {
                 temp_data -= 4096
             }
 
-            info!("read temp{}: {}", i+1, temp_data);
+            info!("read temp{}: {}", i + 1, temp_data);
 
             if i == 0 {
                 let mut temp1 = TEMP1.lock().await;
