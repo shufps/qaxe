@@ -21,7 +21,7 @@ use embassy_sync::channel::Channel;
 use embassy_sync::mutex::Mutex;
 use embassy_sync::signal::Signal;
 use embassy_time::Timer;
-use embedded_io_async::Read;
+use embedded_io_async::{BufRead, Read};
 use static_cell::StaticCell;
 
 use embassy_stm32::timer::OutputPolarity;
@@ -80,6 +80,9 @@ struct PWMControl {
 }
 
 static PWM_CTRL_CHANNEL: Channel<ThreadModeRawMutex, PWMControl, 1> = Channel::new();
+
+const RX_BUF_SIZE : usize = 64;
+const TX_BUF_SIZE : usize = 64;
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
@@ -153,10 +156,10 @@ async fn main(spawner: Spawner) {
     let mut config = usart::Config::default();
     config.baudrate = 115200;
 
-    static TX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
-    let tx_buf = &mut TX_BUF.init([0; 64])[..];
-    static RX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
-    let rx_buf = &mut RX_BUF.init([0; 64])[..];
+    static TX_BUF: StaticCell<[u8; TX_BUF_SIZE]> = StaticCell::new();
+    let tx_buf = &mut TX_BUF.init([0; TX_BUF_SIZE])[..];
+    static RX_BUF: StaticCell<[u8; RX_BUF_SIZE]> = StaticCell::new();
+    let rx_buf = &mut RX_BUF.init([0; RX_BUF_SIZE])[..];
 
     let usart = BufferedUart::new(p.USART1, Irqs, p.PA10, p.PA9, tx_buf, rx_buf, config).unwrap();
     let (mut tx_ctrl, mut rx_ctrl) = usart.split();
@@ -167,6 +170,7 @@ async fn main(spawner: Spawner) {
     let run_1v2 = Output::new(p.PA2, Level::Low, Speed::Low);
     let pgood_1v2 = Input::new(p.PA3, Pull::None);
     let pgood_led = Output::new(p.PA5, Level::High, Speed::Low);
+    let mut activity_led = Output::new(p.PA4, Level::High, Speed::Low);
 
     let reset = Output::new(p.PB13, Level::High, Speed::Low);
 
@@ -249,29 +253,43 @@ async fn main(spawner: Spawner) {
 
     let relay_sender_fut = async {
         loop {
-            // collect up to 4 responses to catch all chip responses
             sender.wait_connection().await;
+
+            // clear buffer after usb was connected
+            rx_ctrl.consume(RX_BUF_SIZE);
+
             info!("Connected relay sender");
 
-            'outer: loop {
+            let mut toggle = 0;
+
+            loop {
                 let mut usart_buf = [0; 11];
                 match rx_ctrl.read_exact(&mut usart_buf).await {
                     Ok(_) => (),
                     Err(e) => {
                         error!("Error reading from USART: {:?}", e);
-                        break;
                     }
                 };
 
                 if usart_buf[0] != 0xaa || usart_buf[1] != 0x55 {
                     debug!("uart data doesn't start with 0xaa 0x55 ... ignoring chunk");
+                    // clear garbage from buffer to resync with responses
+			        rx_ctrl.consume(RX_BUF_SIZE);
                     continue;
                 }
+
+                // toggle led with each response received
+                toggle = 1 - toggle;
+                match toggle {
+                    0 => activity_led.set_high(),
+                    1 => activity_led.set_low(),
+                    _ => {}
+                };
 
                 debug!("USART -> USB: {:x}", &usart_buf[..]);
                 if let Err(e) = sender.write_packet(&usart_buf[..]).await {
                     error!("Error writing to USB: {:?}", e);
-                    break 'outer;
+                    break;
                 }
             }
         }
