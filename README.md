@@ -9,6 +9,14 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 **rev3:** Fixed Caps placement and added Boot-Switch. It should put the STM32 into DFU bootloader but not tested yet.
 
 
+ASICs
+=====
+
+The QAxe uses 4 ASICs of type BM1366.
+
+![image](https://github.com/shufps/qaxe/assets/3079832/da4b85cf-e7ba-4073-ae0d-08c4e82d4b8e)
+
+
 
 Installation
 =============
