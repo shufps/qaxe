@@ -28,6 +28,46 @@ https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md / htt
 There also is a little board with only 3 parts that gives a nice low-cost solution to flash the Qaxe:<br>
 https://github.com/shufps/raspi-pico-dap
 
+On `rev3` there should be the option to boot the stm32 (by pressing the `boot`-button on reset) into DFU-Bootloader mode what makes flashing via USB and without CMSIS-DAP programmer possible.
+
+## Compiling and installing via CMSIS-DAP
+
+Instructions for flashing using the CMSIS-DAP adapter:
+
+```bash
+# install curl
+sudo apt install curl
+
+# install rust
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+# add to ~/.bash.rc (afterwards, opening a new terminal is needed)
+echo 'source "$HOME/.cargo/env"' >> ~/.bashrc
+
+# clone repository
+git clone https://github.com/shufps/qaxe
+
+# clone submodules
+cd qaxe
+git submodule init
+git submodule update
+
+# add rust target for rev2
+rustup target add thumbv7m-none-eabi
+
+# or add rust target for rev1
+rustup target add thumbv6m-none-eabi
+
+# build firmware
+cd firmware/fw-rev2
+./build.sh
+
+# run firmware (this also flashes it to the stm32)
+./run.sh
+
+```
+
+## Flashing via DFU bootloader
 
 TBD
 
