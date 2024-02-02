@@ -52,13 +52,13 @@ cd qaxe
 git submodule init
 git submodule update
 
-# add rust target for rev2
+# add rust target for rev2/3
 rustup target add thumbv7m-none-eabi
 
 # or add rust target for rev1
 rustup target add thumbv6m-none-eabi
 
-# build firmware
+# build firmware for rev2/3
 cd firmware/fw-rev2
 ./build.sh
 
