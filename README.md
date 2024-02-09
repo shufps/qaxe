@@ -80,7 +80,7 @@ cargo objcopy --release --bin qaxe -- -O binary qaxe-rev2.bin
 # install dfu-utils
 sudo apt-get install dfu-util
 
-# not start the stm32 in DFU mode (wire `boot0`-pin to 3.3V on `rev2` or press the button on `rev3`)
+now start the stm32 in DFU mode (wire `boot0`-pin to 3.3V on `rev2` or press the button on `rev3`)
 
 # after booting, list the devices
 dfu-util --list
