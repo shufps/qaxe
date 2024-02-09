@@ -67,29 +67,7 @@ cd firmware/fw-rev2
 
 ```
 
-## Flashing via DFU bootloader
 
-```
-# install cargo-binutils and llvm tools
-cargo install cargo-binutils
-rustup component add llvm-tools-preview
-
-# create the firmware.bin
-cargo objcopy --release --bin qaxe -- -O binary qaxe-rev2.bin
-
-# install dfu-utils
-sudo apt-get install dfu-util
-
-now start the stm32 in DFU mode (wire `boot0`-pin to 3.3V on `rev2` or press the button on `rev3` and reset the device)
-
-# after booting, list the devices
-dfu-util --list
-
-# flash the binary
-dfu-util -a 0 -s 0x08000000:leave -D qaxe-rev2.bin
-
-# remove wire on `boot0` and restart the stm32.
-```
 
 Mining Client
 =============
