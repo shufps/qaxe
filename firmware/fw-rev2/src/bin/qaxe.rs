@@ -255,9 +255,6 @@ async fn main(spawner: Spawner) {
         loop {
             sender.wait_connection().await;
 
-            // clear buffer after usb was connected
-            rx_ctrl.consume(RX_BUF_SIZE);
-
             info!("Connected relay sender");
 
             let mut toggle = 0;
@@ -273,19 +270,18 @@ async fn main(spawner: Spawner) {
 
                 if usart_buf[0] != 0xaa || usart_buf[1] != 0x55 {
                     debug!("uart data doesn't start with 0xaa 0x55 ... ignoring chunk");
-                    // clear garbage from buffer to resync with responses
-			        rx_ctrl.consume(RX_BUF_SIZE);
                     continue;
                 }
 
                 // toggle led with each response received
+/*
                 toggle = 1 - toggle;
                 match toggle {
                     0 => activity_led.set_high(),
                     1 => activity_led.set_low(),
                     _ => {}
                 };
-
+*/
                 debug!("USART -> USB: {:x}", &usart_buf[..]);
                 if let Err(e) = sender.write_packet(&usart_buf[..]).await {
                     error!("Error writing to USB: {:?}", e);
