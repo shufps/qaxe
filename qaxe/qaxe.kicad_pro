@@ -467,7 +467,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "piaxe.step",
+      "step": "../case/qaxe.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
