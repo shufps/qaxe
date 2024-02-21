@@ -258,32 +258,48 @@ async fn main(spawner: Spawner) {
             info!("Connected relay sender");
 
             let mut toggle = 0;
-
+            let mut num_bytes = 0;
+            let mut received = [0u8;11];
+            let preample = [0xaa, 0x55];
             loop {
-                let mut usart_buf = [0; 11];
-                match rx_ctrl.read_exact(&mut usart_buf).await {
+                let mut byte = [0u8;1];
+                match rx_ctrl.read_exact(&mut byte).await {
                     Ok(_) => (),
                     Err(e) => {
                         error!("Error reading from USART: {:?}", e);
                     }
                 };
 
-                if usart_buf[0] != 0xaa || usart_buf[1] != 0x55 {
-                    debug!("uart data doesn't start with 0xaa 0x55 ... ignoring chunk");
+                received[num_bytes] = byte[0];
+
+                // try to sync on serial data
+                match num_bytes {
+                    0 | 1 => // wait for 0xaa 0x55
+                        if received[num_bytes] != preample[num_bytes] {
+                            debug!("unexpected start of serial data, trying to resync ...");
+                            num_bytes = 0;
+                            continue;
+                        },
+                    _ => {},
+                };
+
+                num_bytes += 1;
+
+                if num_bytes != 11 {
                     continue;
                 }
+                num_bytes = 0;
 
                 // toggle led with each response received
-/*
                 toggle = 1 - toggle;
                 match toggle {
                     0 => activity_led.set_high(),
                     1 => activity_led.set_low(),
                     _ => {}
                 };
-*/
-                debug!("USART -> USB: {:x}", &usart_buf[..]);
-                if let Err(e) = sender.write_packet(&usart_buf[..]).await {
+
+                debug!("USART -> USB: {:x}", &received[..]);
+                if let Err(e) = sender.write_packet(&received[..]).await {
                     error!("Error writing to USB: {:?}", e);
                     break;
                 }
@@ -589,5 +605,6 @@ async fn temp_manager(mut i2c: I2c<'static, I2C2>) {
                 *temp2 = temp_data;
             }
         }
+
     }
 }
