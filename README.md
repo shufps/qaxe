@@ -71,9 +71,9 @@ Installation via USB Bootloader on rev3
 =======================================
 The STM32L151CC variant has an integrated DFU Bootloader that should be started when pressing the `boot` button during reset.
 
-Afterwards it should be possible to flash the firmware without CMSIC-DAP:
+Afterwards it should be possible to flash the firmware without CMSIS-DAP:
 
-```
+```bash
 # install cargo-binutils and llvm tools
 cargo install cargo-binutils
 rustup component add llvm-tools-preview
