@@ -6,7 +6,7 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 
 **rev1:** is tested and operating at about 1.7TH/s average speed.<br>
 **rev2:** working fine with the expected speed of ~1.8TH/s avg after some minor modifications (330µF caps are wrongly placed, see rev3)<br>
-**rev3:** Fixed Caps placement and added Boot-Switch. It should put the STM32 into DFU bootloader but not tested yet.
+**rev3:** Fixed Caps placement and added Boot-Switch. ~~It should put the STM32 into DFU bootloader but not tested yet.~~ The STM32L151 doesn't have an USB bootloader 😑
 
 
 ASICs
@@ -28,7 +28,7 @@ https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md / htt
 There also is a little board with only 3 parts that gives a nice low-cost solution to flash the Qaxe:<br>
 https://github.com/shufps/raspi-pico-dap
 
-On `rev3` there should be the option to boot the stm32 (by pressing the `boot`-button on reset) into DFU-Bootloader mode what makes flashing via USB and without CMSIS-DAP programmer possible.
+~~On `rev3` there should be the option to boot the stm32 (by pressing the `boot`-button on reset) into DFU-Bootloader mode what makes flashing via USB and without CMSIS-DAP programmer possible.~~
 
 ## Compiling and installing via CMSIS-DAP
 
