@@ -7,7 +7,7 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 **rev1:** is tested and operating at about 1.7TH/s average speed.<br>
 **rev2:** working fine with the expected speed of ~1.8TH/s avg after some minor modifications (330µF caps are wrongly placed, see rev3)<br>
 **rev3:** Fixed Caps placement and added Boot-Switch. It should put the STM32 into DFU bootloader but not tested yet.
-
+**rev3.1:** Added pulldown on PB2 that is needed for booting the USB bootloader
 
 ASICs
 =====
