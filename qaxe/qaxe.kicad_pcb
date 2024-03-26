@@ -1156,7 +1156,7 @@
 				)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 0.07 5.189 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17254,7 +17254,7 @@
 				)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 0.07 5.189 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20228,7 +20228,7 @@
 				)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 0.07 5.189 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23342,7 +23342,7 @@
 				)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 0.07 5.189 90)
 			(unlocked yes)
 			(layer "F.Fab")
