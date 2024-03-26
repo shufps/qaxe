@@ -14624,7 +14624,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 219.3641 45.72 0)
 			(effects
 				(font
@@ -16856,7 +16856,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 219.3641 130.81 0)
 			(effects
 				(font
@@ -18118,7 +18118,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 138.0841 45.72 0)
 			(effects
 				(font
@@ -22324,7 +22324,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BM1366_mode1"
+		(property "Value" "BM1368_mode1"
 			(at 138.0841 130.81 0)
 			(effects
 				(font
