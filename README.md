@@ -10,6 +10,8 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 **rev3.1:** Added pulldown on PB2 that is needed for booting the USB bootloader<br>
 **rev3.2:** Board got 3mm larger for a perfect fit of low-profile coolers<br>
 
+**note**: please hold off ordering parts for a while until the BOMs and firmwares are upgraded. The USB Bootloader was successfully tested with the L072 variant, the L151 will be dropped, because it still didn't work and getting SWD working is quite a hassle for everyone who tried.
+
 ASICs
 =====
 
