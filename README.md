@@ -11,8 +11,8 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 **rev3.2:** Board got 3mm larger for a perfect fit of low-profile coolers<br>
 
 
-**note**: the `qaxe+` directory is for BM1368. It's **untested**.
-**note2**: If you have a board with `BOOT`-button please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.
+**note**: the `qaxe+` directory is for BM1368. It's **untested**.<br>
+**note2**: If you have a board with `BOOT`-button please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
 
 ASICs
 =====
@@ -20,6 +20,39 @@ ASICs
 The QAxe uses 4 ASICs of type BM1366.
 
 ![image](https://github.com/shufps/qaxe/assets/3079832/da4b85cf-e7ba-4073-ae0d-08c4e82d4b8e)
+
+
+Compilation (Bootloader or CMSIS-DAP)
+======================================
+
+```bash
+# install curl
+sudo apt install curl
+
+# install rust
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+# add to ~/.bash.rc (afterwards, opening a new terminal is needed)
+echo 'source "$HOME/.cargo/env"' >> ~/.bashrc
+
+# clone repository
+git clone https://github.com/shufps/qaxe
+
+# clone submodules
+cd qaxe
+git submodule init
+git submodule update
+
+# add rust target for STM32L0 variants
+rustup target add thumbv7m-none-eabi
+
+# or add rust target for STM32L1 variants
+#rustup target add thumbv6m-none-eabi
+
+# build firmware for L072
+cd firmware/fw-L072CB
+./build.sh
+```
 
 Installation via USB Bootloader on board with `BOOT` button
 ===========================================================
@@ -62,41 +95,15 @@ https://github.com/shufps/raspi-pico-dap
 
 On `rev3` there should be the option to boot the stm32 (by pressing the `boot`-button on reset) into DFU-Bootloader mode what makes flashing via USB and without CMSIS-DAP programmer possible.
 
-## Compiling and Flashing
+## Flashing
 
-Instructions for flashing using the CMSIS-DAP adapter:
+After the source was compiled it is flashed by:
 
 ```bash
-# install curl
-sudo apt install curl
-
-# install rust
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-
-# add to ~/.bash.rc (afterwards, opening a new terminal is needed)
-echo 'source "$HOME/.cargo/env"' >> ~/.bashrc
-
-# clone repository
-git clone https://github.com/shufps/qaxe
-
-# clone submodules
-cd qaxe
-git submodule init
-git submodule update
-
-# add rust target for STM32L0 variants
-rustup target add thumbv7m-none-eabi
-
-# or add rust target for STM32L1 variants
-rustup target add thumbv6m-none-eabi
-
 # build firmware for L072
 cd firmware/fw-L072CB
-./build.sh
-
 # run firmware (this also flashes it to the stm32)
 ./run.sh
-
 ```
 
 
