@@ -583,19 +583,19 @@
           "group_by": false,
           "label": "Distributor",
           "name": "Distributor",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
           "label": "Manufacturer",
           "name": "Manufacturer",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
           "label": "OrderNr",
           "name": "OrderNr",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,

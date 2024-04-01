@@ -25526,7 +25526,7 @@
 				)
 			)
 		)
-		(property "Value" "STM32L151CCT6"
+		(property "Value" "STM32L072CBT6"
 			(at 0 5.85 0)
 			(layer "F.Fab")
 			(uuid "09804981-07d9-416e-8616-d77340560492")
@@ -25585,7 +25585,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "STM32L151CCT6"
+		(property "Manufacturer" "STM32L072CBT6"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25597,7 +25597,7 @@
 				)
 			)
 		)
-		(property "OrderNr" "497-19371-1-ND"
+		(property "OrderNr" "497-17503-ND"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
