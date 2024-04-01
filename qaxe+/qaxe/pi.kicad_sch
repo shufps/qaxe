@@ -14134,7 +14134,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "STM32L151CCT6"
+		(property "Value" "STM32L072CBT6"
 			(at 96.1741 118.745 0)
 			(effects
 				(font
@@ -14180,7 +14180,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "STM32L151CCT6"
+		(property "Manufacturer" "STM32L072CBT6"
 			(at 91.44 78.74 0)
 			(effects
 				(font
@@ -14189,7 +14189,7 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" "497-19371-1-ND"
+		(property "OrderNr" "497-17503-ND"
 			(at 91.44 78.74 0)
 			(effects
 				(font
