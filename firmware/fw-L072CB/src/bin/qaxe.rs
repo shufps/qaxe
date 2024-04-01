@@ -5,14 +5,15 @@ use core::option::Option::Some;
 use defmt::{panic, *};
 use defmt_rtt as _; // global logger
 use embassy_executor::Spawner;
+use embassy_stm32::dma::NoDma;
 use embassy_stm32::gpio::{Input, Level, Output, OutputType, Pull, Speed};
+use embassy_stm32::i2c;
+use embassy_stm32::i2c::I2c;
 use embassy_stm32::rcc::*;
 use embassy_stm32::time::{khz, Hertz};
 use embassy_stm32::timer::simple_pwm::{PwmPin, SimplePwm};
 use embassy_stm32::timer::Channel as PWMChannel;
 use embassy_stm32::usart::BufferedUart;
-use embedded_io_async::Read;
-use static_cell::StaticCell;
 use embassy_stm32::usb::{Driver, Instance};
 use embassy_stm32::{bind_interrupts, peripherals, usart, usb, Config};
 use embassy_sync::blocking_mutex::raw::{CriticalSectionRawMutex, ThreadModeRawMutex};
@@ -20,17 +21,17 @@ use embassy_sync::channel::Channel;
 use embassy_sync::mutex::Mutex;
 use embassy_sync::signal::Signal;
 use embassy_time::Timer;
-use embassy_stm32::i2c::I2c;
-use embassy_stm32::i2c;
-use embassy_stm32::dma::NoDma;
+use embedded_io_async::Read;
+//use static_cell::StaticCell;
+use embassy_stm32::rcc::mux::Clk48sel;
 
+use embassy_stm32::timer::low_level::OutputPolarity;
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
 use embassy_usb::driver::EndpointError;
 use embassy_usb::Builder;
 use embedded_io_async::Write;
 use futures::future::join4;
 use panic_probe as _;
-use embassy_stm32::timer::OutputPolarity;
 
 extern crate alloc;
 extern crate alloc_cortex_m;
@@ -43,14 +44,13 @@ use alloc::borrow::Cow;
 
 use alloc_cortex_m::CortexMHeap;
 
-
 #[global_allocator]
 static ALLOCATOR: CortexMHeap = CortexMHeap::empty();
 
 bind_interrupts!(struct Irqs {
     USB => usb::InterruptHandler<peripherals::USB>;
     USART1 => usart::BufferedInterruptHandler<peripherals::USART1>;
-    I2C1 => i2c::EventInterruptHandler<peripherals::I2C1>, i2c::ErrorInterruptHandler<peripherals::I2C1>;
+    I2C2 => i2c::EventInterruptHandler<peripherals::I2C2>, i2c::ErrorInterruptHandler<peripherals::I2C2>;
 });
 use embassy_stm32::peripherals::*;
 
@@ -74,15 +74,19 @@ static TEMP1: Mutex<ThreadModeRawMutex, u16> = Mutex::new(0u16);
 static TEMP2: Mutex<ThreadModeRawMutex, u16> = Mutex::new(0u16);
 
 struct PWMControl {
-    channel: i32,
-    value: u16,
+    pwm1_value: u16,
+    pwm2_value: u16,
 }
 
-static PWM_CTRL_CHANNEL: Channel<ThreadModeRawMutex, PWMControl, 2> = Channel::new();
+static PWM_CTRL_CHANNEL: Channel<ThreadModeRawMutex, PWMControl, 1> = Channel::new();
+
+const RX_BUF_SIZE : usize = 64;
+const TX_BUF_SIZE : usize = 64;
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
     info!("Hello World!");
+
 
     // Initialize the allocator before using it
     let start = cortex_m_rt::heap_start() as usize;
@@ -90,26 +94,29 @@ async fn main(spawner: Spawner) {
     unsafe { ALLOCATOR.init(start, size) }
 
     let mut config = Config::default();
-    config.rcc.hsi48 = Some(Hsi48Config { sync_from_usb: true }); // needed for USB
-    config.rcc.mux = ClockSrc::PLL1_R;
+    config.rcc.hsi48 = Some(Hsi48Config {
+        sync_from_usb: true,
+    }); // needed for USB
+    config.rcc.sys = Sysclk::PLL1_R;
     config.rcc.hsi = true;
     config.rcc.pll = Some(Pll {
         source: PllSource::HSI,
         div: PllDiv::DIV3,
         mul: PllMul::MUL6,
     });
-    config.rcc.clk48_src = Clk48Src::HSI48;
+    config.rcc.mux.clk48sel = Clk48sel::HSI48;
 
     let p = embassy_stm32::init(config);
 
     let driver = Driver::new(p.USB, Irqs, p.PA12, p.PA11);
 
     // Create embassy-usb Config
-    let mut config = embassy_usb::Config::new(0xc0de, 0xcafe);
+    let mut config = embassy_usb::Config::new(0xc0de, 0xcaff);
     config.max_packet_size_0 = 64;
-    config.manufacturer = Some("Embassy");
-    config.product = Some("USB-serial example");
-    config.serial_number = Some("12345678");
+    config.manufacturer = Some("Microengineer");
+    config.product = Some("Qaxe");
+    config.serial_number = Some("rev3.3");
+    config.self_powered = true;
 
     // Required for windows compatibility.
     // https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.9.1/kconfig/CONFIG_CDC_ACM_IAD.html#help
@@ -120,7 +127,6 @@ async fn main(spawner: Spawner) {
 
     // Create embassy-usb DeviceBuilder using the driver and config.
     // It needs some buffers for building the descriptors.
-    let mut device_descriptor = [0; 256];
     let mut config_descriptor = [0; 256];
     let mut bos_descriptor = [0; 256];
     let mut control_buf = [0; 64];
@@ -131,7 +137,6 @@ async fn main(spawner: Spawner) {
     let mut builder = Builder::new(
         driver,
         config,
-        &mut device_descriptor,
         &mut config_descriptor,
         &mut bos_descriptor,
         &mut [], // no msos descriptors
@@ -150,39 +155,60 @@ async fn main(spawner: Spawner) {
     let mut config = usart::Config::default();
     config.baudrate = 115200;
 
-    static TX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
-    let tx_buf = &mut TX_BUF.init([0; 64])[..];
-    static RX_BUF: StaticCell<[u8; 64]> = StaticCell::new();
-    let rx_buf = &mut RX_BUF.init([0; 64])[..];
+    let mut tx_buf = [0u8; TX_BUF_SIZE];
+    let mut rx_buf = [0u8; RX_BUF_SIZE];
 
-    let usart = BufferedUart::new(p.USART1, Irqs, p.PA10, p.PA9, tx_buf, rx_buf, config).unwrap();
+    let usart = BufferedUart::new(p.USART1, Irqs, p.PA10, p.PA9, &mut tx_buf, &mut rx_buf, config).unwrap();
     let (mut tx_ctrl, mut rx_ctrl) = usart.split();
 
     // Run the USB device.
     let usb_fut = usb.run();
 
-    let run_1v2 = Output::new(p.PB0, Level::Low, Speed::Low);
-    let pgood_1v2 = Input::new(p.PB1, Pull::None);
-    let pgood_led = Output::new(p.PA6, Level::High, Speed::Low);
+    let run_1v2 = Output::new(p.PA2, Level::Low, Speed::Low);
+    let pgood_1v2 = Input::new(p.PA3, Pull::None);
+    let pgood_led = Output::new(p.PA5, Level::High, Speed::Low);
+    let mut activity_led = Output::new(p.PA4, Level::High, Speed::Low);
 
-    let reset = Output::new(p.PA8, Level::High, Speed::Low);
+    let reset = Output::new(p.PB13, Level::High, Speed::Low);
 
     let ch1 = PwmPin::new_ch1(p.PA0, OutputType::PushPull);
-    let mut pwm1 = SimplePwm::new(p.TIM2, Some(ch1), None, None, None, khz(10), Default::default());
-    pwm1.set_polarity(PWMChannel::Ch1, OutputPolarity::ActiveLow);
+    let ch2 = PwmPin::new_ch2(p.PA1, OutputType::PushPull);
+    let mut pwm1 = SimplePwm::new(
+        p.TIM2,
+        Some(ch1),
+        Some(ch2),
+        None,
+        None,
+        khz(10),
+        Default::default(),
+    );
+    pwm1.set_polarity(PWMChannel::Ch1, OutputPolarity::ActiveHigh);
+    pwm1.set_polarity(PWMChannel::Ch2, OutputPolarity::ActiveHigh);
     pwm1.set_duty(PWMChannel::Ch1, pwm1.get_max_duty());
+    pwm1.set_duty(PWMChannel::Ch2, pwm1.get_max_duty());
     pwm1.enable(PWMChannel::Ch1);
+    pwm1.enable(PWMChannel::Ch2);
 
-    let i2c = I2c::new(p.I2C1, p.PB6, p.PB7, Irqs, NoDma, NoDma, Hertz(100_000), Default::default());
+    let mut i2c_config = embassy_stm32::i2c::Config::default();
+    i2c_config.scl_pullup = true;
+    i2c_config.sda_pullup = true;
 
+    let i2c = I2c::new(
+        p.I2C2,
+        p.PB10,
+        p.PB11,
+        Irqs,
+        NoDma,
+        NoDma,
+        Hertz(100_000),
+        i2c_config, /*Default::default()*/
+    );
 
     unwrap!(spawner.spawn(reset_manager(reset)));
     unwrap!(spawner.spawn(power_manager(run_1v2)));
     unwrap!(spawner.spawn(power_good_task(pgood_1v2, pgood_led)));
     unwrap!(spawner.spawn(pwm_manager(pwm1)));
     unwrap!(spawner.spawn(temp_manager(i2c)));
-
-
 
     let protobuf_rpc_fut = async {
         loop {
@@ -224,39 +250,71 @@ async fn main(spawner: Spawner) {
 
     let relay_sender_fut = async {
         loop {
-            // collect up to 4 responses to catch all chip responses
             sender.wait_connection().await;
+
             info!("Connected relay sender");
 
-            'outer: loop {
-                let mut usart_buf = [0; 11];
-                match rx_ctrl.read_exact(&mut usart_buf).await {
+            let mut toggle = 0;
+            let mut num_bytes = 0;
+            let mut received = [0u8;11];
+            let preample = [0xaa, 0x55];
+            loop {
+                let mut byte = [0u8;1];
+                match rx_ctrl.read_exact(&mut byte).await {
                     Ok(_) => (),
                     Err(e) => {
                         error!("Error reading from USART: {:?}", e);
-                        break;
                     }
                 };
 
-                if usart_buf[0] != 0xaa || usart_buf[1] != 0x55 {
-                    debug!("uart data doesn't start with 0xaa 0x55 ... ignoring chunk");
+                received[num_bytes] = byte[0];
+
+                // try to sync on serial data
+                match num_bytes {
+                    0 | 1 => // wait for 0xaa 0x55
+                        if received[num_bytes] != preample[num_bytes] {
+                            debug!("unexpected start of serial data, trying to resync ...");
+                            num_bytes = 0;
+                            continue;
+                        },
+                    _ => {},
+                };
+
+                num_bytes += 1;
+
+                if num_bytes != 11 {
                     continue;
                 }
+                num_bytes = 0;
 
-                debug!("USART -> USB: {:x}", &usart_buf[..]);
-                if let Err(e) = sender.write_packet(&usart_buf[..]).await {
+                // toggle led with each response received
+                toggle = 1 - toggle;
+                match toggle {
+                    0 => activity_led.set_high(),
+                    1 => activity_led.set_low(),
+                    _ => {}
+                };
+
+                debug!("USART -> USB: {:x}", &received[..]);
+                if let Err(e) = sender.write_packet(&received[..]).await {
                     error!("Error writing to USB: {:?}", e);
-                    break 'outer;
+                    break;
                 }
             }
         }
     };
 
-    let _ = join4(usb_fut, protobuf_rpc_fut, relay_receiver_fut, relay_sender_fut).await;
+    let _ = join4(
+        usb_fut,
+        protobuf_rpc_fut,
+        relay_receiver_fut,
+        relay_sender_fut,
+    )
+    .await;
 }
 
 #[embassy_executor::task]
-async fn power_good_task(pgood_1v2: Input<'static, PB1>, mut pgood_led: Output<'static, PA6>) {
+async fn power_good_task(pgood_1v2: Input<'static>, mut pgood_led: Output<'static>) {
     loop {
         let mut pgood_state = PGOOD.lock().await;
         if pgood_1v2.is_high() {
@@ -270,8 +328,9 @@ async fn power_good_task(pgood_1v2: Input<'static, PB1>, mut pgood_led: Output<'
         Timer::after_millis(500).await;
     }
 }
+
 #[embassy_executor::task]
-async fn power_manager(mut run_1v2: Output<'static, PB0>) {
+async fn power_manager(mut run_1v2: Output<'static>) {
     loop {
         let signal = POWER_MANAGER_SIGNAL.wait().await;
 
@@ -288,7 +347,7 @@ async fn power_manager(mut run_1v2: Output<'static, PB0>) {
 }
 
 #[embassy_executor::task]
-async fn reset_manager(mut reset: Output<'static, PA8>) {
+async fn reset_manager(mut reset: Output<'static>) {
     loop {
         let signal = RESET_MANAGER_SIGNAL.wait().await;
 
@@ -308,17 +367,24 @@ async fn reset_manager(mut reset: Output<'static, PA8>) {
 async fn pwm_manager(mut pwm1: SimplePwm<'static, TIM2>) {
     loop {
         let pwm = PWM_CTRL_CHANNEL.receive().await;
-
-        match pwm.channel {
-            1 => {
-                let max_duty = pwm1.get_max_duty() as u32;
-                let duty = max_duty * pwm.value as u32 / 100;
-                info!("pwm1: {}, max: {}", duty, max_duty);
-                pwm1.set_duty(PWMChannel::Ch1, if duty <= max_duty { duty as u16 } else { max_duty as u16 });
-            }
-            2 => { /* NOP */ }
-            _ => { /* NOP */ }
-        };
+        let max_duty = pwm1.get_max_duty() as u32;
+        for i in 0..2 {
+            let (channel, value) = match i {
+                0 => (PWMChannel::Ch1, pwm.pwm1_value),
+                1 => (PWMChannel::Ch2, pwm.pwm2_value),
+                _ => (PWMChannel::Ch3, 0),
+            };
+            let duty = max_duty * value as u32 / 100;
+            info!("pwm{}: {}, max: {}", i, duty, max_duty);
+            pwm1.set_duty(
+                channel,
+                if duty <= max_duty {
+                    duty
+                } else {
+                    max_duty
+                },
+            );
+        }
 
         Timer::after_millis(500).await;
     }
@@ -356,7 +422,7 @@ impl Errors {
     }
 }
 enum Commands {
-    NOP = 0,
+    Nop = 0,
     Control = 1,
     Status = 2,
     Reset = 3,
@@ -366,7 +432,7 @@ enum Commands {
 impl Commands {
     fn from_i32(value: i32) -> Option<Commands> {
         match value {
-            0 => Some(Commands::NOP),
+            0 => Some(Commands::Nop),
             1 => Some(Commands::Control),
             2 => Some(Commands::Status),
             3 => Some(Commands::Reset),
@@ -387,7 +453,10 @@ impl QResponse<'_> {
 }
 
 // The response_bytes should be a mutable slice of u8, not a slice of a mutable slice.
-async fn process_request<'a>(request: &QRequest<'_>, response: &mut QResponse<'_>) -> Result<usize, Errors> {
+async fn process_request<'a>(
+    request: &QRequest<'_>,
+    response: &mut QResponse<'_>,
+) -> Result<usize, Errors> {
     let mut response_data = [0u8; 32];
     let mut response_len = 0;
     let error = Errors::None as i32;
@@ -398,7 +467,7 @@ async fn process_request<'a>(request: &QRequest<'_>, response: &mut QResponse<'_
     }
 
     match op.unwrap() {
-        Commands::NOP => {
+        Commands::Nop => {
             // nop
         }
         Commands::Control => {
@@ -415,17 +484,12 @@ async fn process_request<'a>(request: &QRequest<'_>, response: &mut QResponse<'_
                 _ => PowerManagerCommand::BuckOn,
             });
 
-            let pwm1 = PWMControl {
-                channel: 1,
-                value: cmd.pwm1 as u16,
-            };
-            PWM_CTRL_CHANNEL.send(pwm1).await;
-
-            let pwm2 = PWMControl {
-                channel: 2,
-                value: cmd.pwm2 as u16,
-            };
-            PWM_CTRL_CHANNEL.send(pwm2).await;
+            PWM_CTRL_CHANNEL
+                .send(PWMControl {
+                    pwm1_value: cmd.pwm1 as u16,
+                    pwm2_value: cmd.pwm2 as u16,
+                })
+                .await;
         }
         Commands::Status => {
             info!("status");
@@ -459,11 +523,18 @@ async fn process_request<'a>(request: &QRequest<'_>, response: &mut QResponse<'_
     response.id = request.id;
     response.error = error;
     response.data = Cow::Owned(response_data[..response_len].to_vec());
-    debug!("response.id: {}, response.error:{}, response.data: {:?}", response.id, response.error, response_data[..response_len]);
+    debug!(
+        "response.id: {}, response.error:{}, response.data: {:?}",
+        response.id,
+        response.error,
+        response_data[..response_len]
+    );
     Ok(response_len)
 }
 
-async fn json_rpc<'d, T: Instance + 'd>(class: &mut CdcAcmClass<'d, Driver<'d, T>>) -> Result<(), Disconnected> {
+async fn json_rpc<'d, T: Instance + 'd>(
+    class: &mut CdcAcmClass<'d, Driver<'d, T>>,
+) -> Result<(), Disconnected> {
     let mut request_bytes = [0u8; 64];
     let mut response_bytes = [0u8; 64];
 
@@ -492,42 +563,45 @@ async fn json_rpc<'d, T: Instance + 'd>(class: &mut CdcAcmClass<'d, Driver<'d, T
         }
 
         let serialized_len = response.get_size() + 1 /* varint */;
-        if let Err(_) = quick_protobuf::serialize_into_slice(&response, &mut response_bytes) {
+        if quick_protobuf::serialize_into_slice(&response, &mut response_bytes).is_err() {
             error!("{}", Errors::to_string(&Errors::ErrorSerializingResponse));
             continue;
         }
 
-        class.write_packet(&response_bytes[..serialized_len]).await?;
+        class
+            .write_packet(&response_bytes[..serialized_len])
+            .await?;
     }
 }
 
-
 #[embassy_executor::task]
-async fn temp_manager(mut i2c: I2c<'static, I2C1>) {
+async fn temp_manager(mut i2c: I2c<'static, I2C2>) {
     loop {
-        let mut data = [0u8;2];
-        if let Err(e) = i2c.blocking_read(0x48, &mut data) {
-            error!("i2c error: {:?}", e);
-            continue;
-        }
-
-        let mut temp1_data = ((data[0] as u16) << 4) | ((data[1] as u16) >> 4);
-
-        if temp1_data > 2047 {
-            temp1_data -= 4096
-        }
-
-        let temp2_data = 0u16;
-        info!("read temp1: {}", temp1_data);
-
-        let mut temp1 = TEMP1.lock().await;
-        *temp1 = temp1_data;
-        drop(temp1);
-
-        let mut temp2 = TEMP2.lock().await;
-        *temp2 = temp2_data;
-        drop(temp2);
-
         Timer::after_millis(5000).await;
+
+        for i in 0..2 {
+            let mut data = [0u8; 2];
+            if let Err(e) = i2c.blocking_read(0x48 + i, &mut data) {
+                error!("i2c error: {:?}", e);
+                continue;
+            }
+
+            let mut temp_data = ((data[0] as u16) << 4) | ((data[1] as u16) >> 4);
+
+            if temp_data > 2047 {
+                temp_data -= 4096
+            }
+
+            info!("read temp{}: {}", i + 1, temp_data);
+
+            if i == 0 {
+                let mut temp1 = TEMP1.lock().await;
+                *temp1 = temp_data;
+            } else {
+                let mut temp2 = TEMP2.lock().await;
+                *temp2 = temp_data;
+            }
+        }
+
     }
 }
