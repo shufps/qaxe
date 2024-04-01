@@ -24,7 +24,7 @@ use embassy_time::Timer;
 use embedded_io_async::Read;
 use static_cell::StaticCell;
 
-use embassy_stm32::timer::OutputPolarity;
+use embassy_stm32::timer::low_level::OutputPolarity;
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
 use embassy_usb::driver::EndpointError;
 use embassy_usb::Builder;
@@ -94,7 +94,7 @@ async fn main(spawner: Spawner) {
     unsafe { ALLOCATOR.init(start, size) }
 
     let mut config = embassy_stm32::Config::default();
-    config.rcc.mux = ClockSrc::PLL1_R;
+    config.rcc.sys = Sysclk::PLL1_R;
     config.rcc.hse = Some(Hse {
         freq: Hertz::mhz(8),
         mode: HseMode::Bypass,
@@ -126,7 +126,6 @@ async fn main(spawner: Spawner) {
 
     // Create embassy-usb DeviceBuilder using the driver and config.
     // It needs some buffers for building the descriptors.
-    let mut device_descriptor = [0; 256];
     let mut config_descriptor = [0; 256];
     let mut bos_descriptor = [0; 256];
     let mut control_buf = [0; 64];
@@ -137,7 +136,6 @@ async fn main(spawner: Spawner) {
     let mut builder = Builder::new(
         driver,
         config,
-        &mut device_descriptor,
         &mut config_descriptor,
         &mut bos_descriptor,
         &mut [], // no msos descriptors
@@ -317,7 +315,7 @@ async fn main(spawner: Spawner) {
 }
 
 #[embassy_executor::task]
-async fn power_good_task(pgood_1v2: Input<'static, PA3>, mut pgood_led: Output<'static, PA5>) {
+async fn power_good_task(pgood_1v2: Input<'static>, mut pgood_led: Output<'static>) {
     loop {
         let mut pgood_state = PGOOD.lock().await;
         if pgood_1v2.is_high() {
@@ -333,7 +331,7 @@ async fn power_good_task(pgood_1v2: Input<'static, PA3>, mut pgood_led: Output<'
 }
 
 #[embassy_executor::task]
-async fn power_manager(mut run_1v2: Output<'static, PA2>) {
+async fn power_manager(mut run_1v2: Output<'static>) {
     loop {
         let signal = POWER_MANAGER_SIGNAL.wait().await;
 
@@ -350,7 +348,7 @@ async fn power_manager(mut run_1v2: Output<'static, PA2>) {
 }
 
 #[embassy_executor::task]
-async fn reset_manager(mut reset: Output<'static, PB13>) {
+async fn reset_manager(mut reset: Output<'static>) {
     loop {
         let signal = RESET_MANAGER_SIGNAL.wait().await;
 
@@ -382,9 +380,9 @@ async fn pwm_manager(mut pwm1: SimplePwm<'static, TIM2>) {
             pwm1.set_duty(
                 channel,
                 if duty <= max_duty {
-                    duty as u16
+                    duty
                 } else {
-                    max_duty as u16
+                    max_duty
                 },
             );
         }
