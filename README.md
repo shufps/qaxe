@@ -12,7 +12,7 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 
 
 **note**: the `qaxe+` directory is for BM1368. It's **untested**.<br>
-**note2**: If you have a board with `BOOT`-button please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
+**note2**: If you have a board with `BOOT`-button (any rev3) please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
 
 ASICs
 =====
