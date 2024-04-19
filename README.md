@@ -66,7 +66,7 @@ cargo install cargo-binutils
 rustup component add llvm-tools-preview
 
 # create the firmware.bin
-cargo objcopy --release --bin qaxe -- -O binary qaxe.bin
+DEFMT_LOG=info cargo objcopy --release --bin qaxe -- -O binary qaxe.bin
 
 # install dfu-utils
 sudo apt-get install dfu-util
