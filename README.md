@@ -44,10 +44,10 @@ git submodule init
 git submodule update
 
 # add rust target for STM32L0 variants
-rustup target add thumbv7m-none-eabi
+#rustup target add thumbv6m-none-eabi
 
 # or add rust target for STM32L1 variants
-#rustup target add thumbv6m-none-eabi
+rustup target add thumbv7m-none-eabi
 
 # build firmware for L072
 cd firmware/fw-L072CB
