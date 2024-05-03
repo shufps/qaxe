@@ -80,8 +80,8 @@ struct PWMControl {
 
 static PWM_CTRL_CHANNEL: Channel<ThreadModeRawMutex, PWMControl, 1> = Channel::new();
 
-const RX_BUF_SIZE : usize = 64;
-const TX_BUF_SIZE : usize = 64;
+const RX_BUF_SIZE : usize = 256;
+const TX_BUF_SIZE : usize = 256;
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
