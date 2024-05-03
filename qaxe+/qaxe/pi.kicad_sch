@@ -5036,10 +5036,6 @@
 		(uuid "9fe6ed9f-bed1-4ea2-9db2-c26b09a4108c")
 	)
 	(no_connect
-		(at 109.22 60.96)
-		(uuid "a226434b-7259-4076-a89a-a61402d5f125")
-	)
-	(no_connect
 		(at 76.2 78.74)
 		(uuid "ac6a8fff-e183-4e2e-a830-9ff8fc2fdcd3")
 	)
@@ -6345,6 +6341,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 60.96) (xy 120.65 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b150bd17-8fe6-4cb8-8490-2cfcdc68f084")
+	)
+	(wire
+		(pts
 			(xy 109.22 76.2) (xy 123.19 76.2)
 		)
 		(stroke
@@ -7415,6 +7421,28 @@
 			(justify left bottom)
 		)
 		(uuid "fd69fdfc-b798-4033-af65-3a20172b9171")
+	)
+	(global_label "LDO_EN"
+		(shape output)
+		(at 120.65 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b34ca05a-3c78-4737-a6a8-51f2dd8666ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 130.7109 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "RXD"
 		(shape input)
@@ -14134,7 +14162,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "STM32L072CBT6"
+		(property "Value" "STM32L151CCT6"
 			(at 96.1741 118.745 0)
 			(effects
 				(font
@@ -14180,7 +14208,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "STM32L072CBT6"
+		(property "Manufacturer" "STM32L151CCT6"
 			(at 91.44 78.74 0)
 			(effects
 				(font
@@ -14189,7 +14217,7 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" "497-17503-ND"
+		(property "OrderNr" "497-19371-1-ND"
 			(at 91.44 78.74 0)
 			(effects
 				(font
