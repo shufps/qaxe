@@ -391,7 +391,7 @@
 				)
 			)
 		)
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0.75 0)
@@ -6443,7 +6443,7 @@
 		(path "/9bc1a7d6-07fa-4858-9423-fb2dbf7da294/54cd3213-f237-4b9e-b1a2-56e13f562c60")
 		(sheetname "STM32")
 		(sheetfile "pi.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.227064 0.735)
 			(end 0.227064 0.735)
@@ -8753,7 +8753,7 @@
 		(path "/9bc1a7d6-07fa-4858-9423-fb2dbf7da294/b5a23e21-3b69-4fa8-b509-87c9bf20162f")
 		(sheetname "STM32")
 		(sheetfile "pi.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom dnp)
 		(fp_line
 			(start -1.33 -1.33)
 			(end 0 -1.33)
@@ -11385,7 +11385,7 @@
 		(path "/9bc1a7d6-07fa-4858-9423-fb2dbf7da294/31e8f37e-25dc-4105-a9d4-2dc44e671508")
 		(sheetname "STM32")
 		(sheetfile "pi.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom dnp)
 		(fp_line
 			(start -1.33 -1.33)
 			(end 0 -1.33)
@@ -14459,7 +14459,7 @@
 				)
 			)
 		)
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0.75 0)
@@ -18197,7 +18197,7 @@
 				)
 			)
 		)
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0.75 0)
@@ -28503,7 +28503,7 @@
 		(path "/8ec0a9c6-2b78-44ef-a83d-9047d2828409/71209cac-1909-4b2e-a68c-0a7b5e9a9470")
 		(sheetname "Power")
 		(sheetfile "power.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -1.2 -1.2)
 			(end 1.2 -1.2)
@@ -28670,7 +28670,7 @@
 				)
 			)
 		)
-		(attr through_hole)
+		(attr through_hole exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0.5 0)
@@ -32601,7 +32601,7 @@
 		(path "/9bc1a7d6-07fa-4858-9423-fb2dbf7da294/5ee6e271-f99c-4d09-b932-0deddd8d6427")
 		(sheetname "STM32")
 		(sheetfile "pi.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.227064 0.735)
 			(end 0.227064 0.735)
@@ -35942,7 +35942,7 @@
 				)
 			)
 		)
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 0.75 0)
