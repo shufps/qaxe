@@ -22,7 +22,8 @@ use embassy_sync::signal::Signal;
 use embassy_time::Timer;
 use embedded_io_async::Read;
 use embassy_stm32::rcc::mux::Clk48sel;
-use embassy_stm32::uid;
+
+mod uid;
 
 use embassy_stm32::timer::low_level::OutputPolarity;
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
