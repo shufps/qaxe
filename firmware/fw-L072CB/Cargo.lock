@@ -306,6 +306,7 @@ dependencies = [
  "alloc-cortex-m",
  "cortex-m",
  "cortex-m-rt",
+ "critical-section",
  "defmt",
  "defmt-rtt",
  "embassy-executor",
