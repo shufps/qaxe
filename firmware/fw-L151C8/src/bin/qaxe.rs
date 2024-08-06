@@ -5,7 +5,6 @@ use core::option::Option::Some;
 use defmt::{panic, *};
 use defmt_rtt as _; // global logger
 use embassy_executor::Spawner;
-use embassy_stm32::dma::NoDma;
 use embassy_stm32::gpio::{Input, Level, Output, OutputType, Pull, Speed};
 use embassy_stm32::i2c;
 use embassy_stm32::i2c::I2c;
@@ -58,16 +57,10 @@ use embassy_stm32::peripherals::*;
 #[derive(PartialEq)]
 enum ResetManagerCommand {
     Reset,
-}
-
-#[derive(PartialEq)]
-enum PowerManagerCommand {
-    BuckOn,
-    BuckOff,
+    Shutdown,
 }
 
 static RESET_MANAGER_SIGNAL: Signal<CriticalSectionRawMutex, ResetManagerCommand> = Signal::new();
-static POWER_MANAGER_SIGNAL: Signal<CriticalSectionRawMutex, PowerManagerCommand> = Signal::new();
 
 static PGOOD: Mutex<ThreadModeRawMutex, bool> = Mutex::new(false);
 
@@ -170,6 +163,9 @@ async fn main(spawner: Spawner) {
     let pgood_led = Output::new(p.PA5, Level::High, Speed::Low);
     let mut activity_led = Output::new(p.PA4, Level::High, Speed::Low);
 
+    // init ldo_en with low
+    let ldo_en = Output::new(p.PA7, Level::Low, Speed::Low);
+
     let reset = Output::new(p.PB13, Level::High, Speed::Low);
 
     let ch1 = PwmPin::new_ch1(p.PA0, OutputType::PushPull);
@@ -199,14 +195,13 @@ async fn main(spawner: Spawner) {
         p.PB10,
         p.PB11,
         Irqs,
-        NoDma,
-        NoDma,
+        p.DMA1_CH4,
+        p.DMA1_CH5,
         Hertz(100_000),
         i2c_config, /*Default::default()*/
     );
 
-    unwrap!(spawner.spawn(reset_manager(reset)));
-    unwrap!(spawner.spawn(power_manager(run_1v2)));
+    unwrap!(spawner.spawn(reset_manager(run_1v2, reset, ldo_en)));
     unwrap!(spawner.spawn(power_good_task(pgood_1v2, pgood_led)));
     unwrap!(spawner.spawn(pwm_manager(pwm1)));
     unwrap!(spawner.spawn(temp_manager(i2c)));
@@ -331,36 +326,39 @@ async fn power_good_task(pgood_1v2: Input<'static>, mut pgood_led: Output<'stati
 }
 
 #[embassy_executor::task]
-async fn power_manager(mut run_1v2: Output<'static>) {
-    loop {
-        let signal = POWER_MANAGER_SIGNAL.wait().await;
-
-        if signal == PowerManagerCommand::BuckOn {
-            info!("switching buck on");
-            run_1v2.set_high();
-        }
-
-        if signal == PowerManagerCommand::BuckOff {
-            info!("switching buck off");
-            run_1v2.set_low();
-        }
-    }
-}
-
-#[embassy_executor::task]
-async fn reset_manager(mut reset: Output<'static>) {
+async fn reset_manager(mut run_1v2: Output<'static>, mut reset: Output<'static>, mut ldo_en: Output<'static>) {
     loop {
         let signal = RESET_MANAGER_SIGNAL.wait().await;
 
-        if signal != ResetManagerCommand::Reset {
-            continue;
-        }
+        match signal {
+            ResetManagerCommand::Reset => {
+                info!("reset triggered!");
+                // switch off all LDOs and assert reset
+                run_1v2.set_low();
+                ldo_en.set_low();
+                reset.set_high();
+                Timer::after_millis(250).await;
 
-        info!("reset triggered!");
-        reset.set_high();
-        Timer::after_millis(500).await;
-        reset.set_low();
-        Timer::after_millis(500).await;
+                // switch on LDOs
+                ldo_en.set_high();
+                Timer::after_millis(100).await;
+
+                // switch on buck
+                run_1v2.set_high();
+                Timer::after_millis(250).await;
+
+                // deassert reset
+                reset.set_low();
+                Timer::after_millis(250).await;
+            }
+            ResetManagerCommand::Shutdown => {
+                info!("shutdown triggered!");
+                // switch off all LDOs and assert reset
+                run_1v2.set_low();
+                ldo_en.set_low();
+                reset.set_high();
+            }
+        }
     }
 }
 
@@ -480,11 +478,6 @@ async fn process_request<'a>(
                 cmd.state_1v2, cmd.pwm1, cmd.pwm2
             );
 
-            POWER_MANAGER_SIGNAL.signal(match cmd.state_1v2 {
-                0 => PowerManagerCommand::BuckOff,
-                _ => PowerManagerCommand::BuckOn,
-            });
-
             PWM_CTRL_CHANNEL
                 .send(PWMControl {
                     pwm1_value: cmd.pwm1 as u16,
@@ -518,7 +511,7 @@ async fn process_request<'a>(
                 .map_err(|_| Errors::ErrorSerializingResponseData)?;
         }
         Commands::Reset => RESET_MANAGER_SIGNAL.signal(ResetManagerCommand::Reset),
-        Commands::Shutdown => POWER_MANAGER_SIGNAL.signal(PowerManagerCommand::BuckOff),
+        Commands::Shutdown => RESET_MANAGER_SIGNAL.signal(ResetManagerCommand::Shutdown),
     };
 
     response.id = request.id;
@@ -576,13 +569,13 @@ async fn json_rpc<'d, T: Instance + 'd>(
 }
 
 #[embassy_executor::task]
-async fn temp_manager(mut i2c: I2c<'static, I2C2>) {
+async fn temp_manager(mut i2c: I2c<'static, I2C2, DMA1_CH4, DMA1_CH5>) {
     loop {
         Timer::after_millis(5000).await;
 
         for i in 0..2 {
             let mut data = [0u8; 2];
-            if let Err(e) = i2c.blocking_read(0x48 + i, &mut data) {
+            if let Err(e) = i2c.read(0x48 + i, &mut data).await {
                 error!("i2c error: {:?}", e);
                 continue;
             }
