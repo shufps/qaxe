@@ -10,10 +10,19 @@ Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piax
 **rev3.1:** Added pulldown on PB2 that is needed for booting the USB bootloader<br>
 **rev3.2:** Board got 3mm larger for a perfect fit of low-profile coolers<br>
 <br>
+**note**: If you have a board with `BOOT`-button (any rev3) please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
+
+# QAxe+
+
+QAxe+ is a quad-BM1368 Variant. Mining speed is average 2.4TH/s at 55W (measured at 230V)<br>
+
+<img src="https://github.com/shufps/qaxe/assets/3079832/79d25550-ae5b-4eae-92bb-4ff231449e13" width="600px">
+<br>
+
+
 **rev4:** QAxe+ with BM1368, working but ASIC reset behaves weird sometimes. Measured performance is 2.4TH/s average with 55W (measured on 230V)<br>
 **rev4.1:** only change is 3 pull-down resistors on NRSTI pins<br>
 <br>
-**note2**: If you have a board with `BOOT`-button (any rev3) please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
 
 ASICs
 =====

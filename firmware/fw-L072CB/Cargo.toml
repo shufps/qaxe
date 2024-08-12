@@ -11,6 +11,8 @@ embassy-time = { version = "0.3", path = "../embassy/embassy-time", features = [
 embassy-stm32 = { version = "0.1.0", path = "../embassy/embassy-stm32", features = [ "defmt", "stm32l072cb", "time-driver-tim3", "memory-x"]  }
 embassy-usb = { version = "0.1.0", path = "../embassy/embassy-usb", features = ["defmt"] }
 
+critical-section = "1.1"
+
 defmt = "0.3"
 defmt-rtt = "0.4"
 
