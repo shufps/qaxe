@@ -24,7 +24,7 @@ QAxe+ is a quad-BM1368 Variant. Mining speed is average 2.4TH/s at 55W (measured
 **rev4.1:** only change is 3 pull-down resistors on NRSTI pins<br>
 <br>
 
-# NerdQaxe+
+# NerdQAxe+
 
 NerdQaxe+ is a Qaxe+ with [Nerdminer](https://github.com/BitMaker-hub/NerdMiner_v2) / [Nerdaxe](https://github.com/BitMaker-hub/NerdAxeUltra) Display and is running the [BitAxe](https://github.com/skot/bitaxe) Firmware as its core.
 
