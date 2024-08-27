@@ -43,8 +43,11 @@ The QAxe uses 4 ASICs of type BM1366.
 
 ![image](https://github.com/shufps/qaxe/assets/3079832/da4b85cf-e7ba-4073-ae0d-08c4e82d4b8e)
 
+The QAxe+ and NerdQaxe+ uses 4 ASICs of type BM1368.
 
-Compilation (Bootloader or CMSIS-DAP)
+
+
+Compilation (Bootloader or CMSIS-DAP) (QAxe, QAxe+)
 ======================================
 
 ```bash
@@ -76,7 +79,7 @@ cd firmware/fw-L072CB
 ./build.sh
 ```
 
-Installation via USB Bootloader on board with `BOOT` button
+Installation via USB Bootloader on board with `BOOT` button (QAxe, QAxe+)
 ===========================================================
 The STM32L072CB variant has an integrated DFU Bootloader that starts when pressing the `BOOT` button during reset.
 
@@ -103,34 +106,7 @@ dfu-util -a 0 -s 0x08000000:leave -D qaxe.bin
 ```
 
 
-Installation via CMSIS-DAP Programmer
-=====================================
-
-**note**: Using CMSIS-DAP and PicoProbe has been turned out to be quite a hassle for people who just want to flash the STM32 once, it's suggested to use the USB bootloader with the STM32 L072CB variant.
-
-As programming/debug adapter the Picoprobe firmware running on a Raspi Pico works best: <br>
-https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md / https://github.com/raspberrypi/picoprobe/releases/tag/picoprobe-cmsis-v1.0.3
-<br>
-<br>
-There also is a little board with only 3 parts that gives a nice low-cost solution to flash the Qaxe:<br>
-https://github.com/shufps/raspi-pico-dap
-
-On `rev3` there should be the option to boot the stm32 (by pressing the `boot`-button on reset) into DFU-Bootloader mode what makes flashing via USB and without CMSIS-DAP programmer possible.
-
-## Flashing
-
-After the source was compiled it is flashed by:
-
-```bash
-# build firmware for L072
-cd firmware/fw-L072CB
-# run firmware (this also flashes it to the stm32)
-./run.sh
-```
-
-
-
-Mining Client
+Mining Client (QAxe, QAxe+)
 =============
 
 ![image](https://github.com/shufps/qaxe/assets/3079832/5afb98b6-9153-454f-adc0-137706cad032)
