@@ -9,7 +9,7 @@ It runs standalone without Raspberry Pi and uses 4 ASICs of type BM1368.
 Highlights:
 
 - uses the NerdAxe / NerdMiner display
-- better Buck converter that runs a lot cooler (about 10°C)
+- better Buck converter that runs a lot cooler (about 10°C) with oltage / current / power monitoring
 - standalone, no Raspberry Pi or other PC needed
 - AxeOS with improvements and enhancements
   - Influx DB support
