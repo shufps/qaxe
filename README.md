@@ -32,9 +32,18 @@ It runs standalone without Raspberry Pi and uses 4 ASICs of type BM1368.
 
 <img src="https://github.com/user-attachments/assets/044c17d4-6ed3-4d6a-811a-17992a6c8566" width="600px">
 
-The NerdQAxe+ runs with a variant of the AxeOS firmware: https://github.com/shufps/ESP-Miner-NerdQAxePlus
+Highlights:
 
-It has some improvements and enhancements like InfluxDB support.
+- uses the NerdAxe / NerdMiner display
+- better Buck converter that runs a lot cooler (about 10°C)
+- standalone, no Raspberry Pi or other PC needed
+- AxeOS with improvements and enhancements
+  - Influx DB support
+  - Better charting (10m, 1h, 1d), data doesn't get lost on Web UI reloads 
+  - ASIC clock and voltage adjustable without reboot
+  - Stratum client stability improvements (TCP timeouts)
+
+The NerdQAxe+ runs with a variant of the AxeOS firmware: https://github.com/shufps/ESP-Miner-NerdQAxePlus
 
 ASICs
 =====
