@@ -32,6 +32,9 @@ It runs standalone without Raspberry Pi and uses 4 ASICs of type BM1368.
 
 <img src="https://github.com/user-attachments/assets/044c17d4-6ed3-4d6a-811a-17992a6c8566" width="600px">
 
+The NerdQAxe+ runs with a variant of the AxeOS firmware: https://github.com/shufps/ESP-Miner-NerdQAxePlus
+
+It has some improvements and enhancements like InfluxDB support.
 
 ASICs
 =====
