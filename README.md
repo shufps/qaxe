@@ -1,29 +1,3 @@
-# Qaxe
-
-Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piaxe) and [BitAxe](https://github.com/skot/bitaxe/tree/ultra-v1.3).
-
-![image](https://github.com/shufps/qaxe/assets/3079832/4f741daf-940c-4ba4-a477-e8de91f4513c)
-
-**rev1:** is tested and operating at about 1.7TH/s average speed.<br>
-**rev2:** working fine with the expected speed of ~1.8TH/s avg after some minor modifications (330µF caps are wrongly placed, see rev3)<br>
-**rev3:** Fixed Caps placement and added Boot-Switch. It should put the STM32 into DFU bootloader but not tested yet.<br>
-**rev3.1:** Added pulldown on PB2 that is needed for booting the USB bootloader<br>
-**rev3.2:** Board got 3mm larger for a perfect fit of low-profile coolers<br>
-<br>
-**note**: If you have a board with `BOOT`-button (any rev3) please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
-
-# QAxe+
-
-QAxe+ is a quad-BM1368 Variant. Mining speed is average 2.4TH/s at 55W (measured at 230V)<br>
-
-<img src="https://github.com/shufps/qaxe/assets/3079832/79d25550-ae5b-4eae-92bb-4ff231449e13" width="600px">
-<br>
-
-
-**rev4:** QAxe+ with BM1368, working but ASIC reset behaves weird sometimes. Measured performance is 2.4TH/s average with 55W (measured on 230V)<br>
-**rev4.1:** only change is 3 pull-down resistors on NRSTI pins<br>
-<br>
-
 # NerdQAxe+
 
 NerdQaxe+ is a Qaxe+ with [Nerdminer](https://github.com/BitMaker-hub/NerdMiner_v2) / [Nerdaxe](https://github.com/BitMaker-hub/NerdAxeUltra) Display and is running the [BitAxe](https://github.com/skot/bitaxe) Firmware as its core.
@@ -44,6 +18,37 @@ Highlights:
   - Stratum client stability improvements (TCP timeouts)
 
 The NerdQAxe+ runs with a variant of the AxeOS firmware: https://github.com/shufps/ESP-Miner-NerdQAxePlus
+
+**rev5.0** Good to go, no bug found 🥳🚀
+
+# QAxe+
+
+QAxe+ is a quad-BM1368 Variant. Mining speed is average 2.4TH/s at 55W (measured at 230V)<br>
+
+<img src="https://github.com/shufps/qaxe/assets/3079832/79d25550-ae5b-4eae-92bb-4ff231449e13" width="600px">
+<br>
+
+
+**rev4:** QAxe+ with BM1368, working but ASIC reset behaves weird sometimes. Measured performance is 2.4TH/s average with 55W (measured on 230V)<br>
+**rev4.1:** only change is 3 pull-down resistors on NRSTI pins<br>
+<br>
+
+
+# Qaxe
+
+Qaxe is a  quad-BM1366 Miner based on the [PiAxe](https://github.com/shufps/piaxe) and [BitAxe](https://github.com/skot/bitaxe/tree/ultra-v1.3).
+
+![image](https://github.com/shufps/qaxe/assets/3079832/4f741daf-940c-4ba4-a477-e8de91f4513c)
+
+**rev1:** is tested and operating at about 1.7TH/s average speed.<br>
+**rev2:** working fine with the expected speed of ~1.8TH/s avg after some minor modifications (330µF caps are wrongly placed, see rev3)<br>
+**rev3:** Fixed Caps placement and added Boot-Switch. It should put the STM32 into DFU bootloader but not tested yet.<br>
+**rev3.1:** Added pulldown on PB2 that is needed for booting the USB bootloader<br>
+**rev3.2:** Board got 3mm larger for a perfect fit of low-profile coolers<br>
+<br>
+**note**: If you have a board with `BOOT`-button (any rev3) please order the L072 STM32 (BOM has been updated) because usb bootloader is the easiest way to flash the STM.<br>
+
+
 
 ASICs
 =====
