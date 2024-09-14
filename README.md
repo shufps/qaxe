@@ -123,7 +123,8 @@ dfu-util -a 0 -s 0x08000000:leave -D qaxe.bin
 Mining Client (QAxe, QAxe+)
 =============
 
-![image](https://github.com/shufps/qaxe/assets/3079832/5afb98b6-9153-454f-adc0-137706cad032)
+![image](https://github.com/user-attachments/assets/95591dea-1ee0-4877-9318-95d7a2488da4)
+
 
 
 
