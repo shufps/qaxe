@@ -5873,6 +5873,12 @@
 		(uuid "1c6a4fc9-d489-4c50-8aa8-525de913194d")
 	)
 	(junction
+		(at 62.23 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1e93f022-c572-4823-8883-4788683db6e0")
+	)
+	(junction
 		(at 233.045 257.175)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5967,12 +5973,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "76bb28ed-8323-4c27-8f02-789727ad3719")
-	)
-	(junction
-		(at 59.055 118.11)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "79da81d4-abd3-4fa0-8eb5-4de7d68001f8")
 	)
 	(junction
 		(at 294.64 105.41)
@@ -6095,12 +6095,6 @@
 		(uuid "af322cd2-ffd3-48e7-b8a1-6bffd0d890f1")
 	)
 	(junction
-		(at 62.23 123.19)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b50a1f44-2073-4489-a76c-b17ff8de703e")
-	)
-	(junction
 		(at 381 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6171,12 +6165,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ee006866-18c2-4989-9aaa-5cb9e7237cc1")
-	)
-	(junction
-		(at 59.055 127.635)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f6e90ac4-517e-484b-a482-61cd4e589178")
 	)
 	(junction
 		(at 364.49 120.65)
@@ -6551,16 +6539,6 @@
 			(type default)
 		)
 		(uuid "1b0f1431-6ad9-4e76-8515-c78cd24de727")
-	)
-	(wire
-		(pts
-			(xy 59.055 125.73) (xy 59.055 127.635)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1bd5074a-f70e-4ad9-b36d-ffc2261f48bf")
 	)
 	(wire
 		(pts
@@ -7484,7 +7462,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 127.635) (xy 59.055 127.635)
+			(xy 57.15 120.65) (xy 62.23 120.65)
 		)
 		(stroke
 			(width 0)
@@ -7531,16 +7509,6 @@
 			(type default)
 		)
 		(uuid "6f2be943-4a89-4eeb-a82f-ffb791f9ae33")
-	)
-	(wire
-		(pts
-			(xy 62.23 120.65) (xy 62.23 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70231b8c-10dd-4ee6-9648-ff0cb15fd4b8")
 	)
 	(wire
 		(pts
@@ -7631,16 +7599,6 @@
 			(type default)
 		)
 		(uuid "76e53488-3467-47c0-9ef5-530d48182441")
-	)
-	(wire
-		(pts
-			(xy 59.055 127.635) (xy 56.515 127.635)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "78ac45bc-cda1-4afb-9ca9-aaf3c4ed785d")
 	)
 	(wire
 		(pts
@@ -8284,7 +8242,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 118.11) (xy 59.055 118.11)
+			(xy 57.15 118.11) (xy 64.77 118.11)
 		)
 		(stroke
 			(width 0)
@@ -8404,16 +8362,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.055 118.11) (xy 64.77 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "abaa8aff-c302-4295-ba38-8bef7fef9505")
-	)
-	(wire
-		(pts
 			(xy 145.415 243.205) (xy 145.415 259.715)
 		)
 		(stroke
@@ -8424,7 +8372,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 123.19) (xy 62.23 127.635)
+			(xy 62.23 120.65) (xy 62.23 123.19)
 		)
 		(stroke
 			(width 0)
@@ -13452,7 +13400,7 @@
 	(symbol
 		(lib_name "+3V3_2")
 		(lib_id "power:+3V3")
-		(at 56.515 127.635 90)
+		(at 57.15 120.65 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13461,7 +13409,7 @@
 		(fields_autoplaced yes)
 		(uuid "49a4c51c-9c18-425a-a1b6-e0007d4535bb")
 		(property "Reference" "#PWR05"
-			(at 60.325 127.635 0)
+			(at 60.96 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13470,7 +13418,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 53.34 127.6349 90)
+			(at 53.975 120.6499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13479,7 +13427,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 56.515 127.635 0)
+			(at 57.15 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13488,7 +13436,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 56.515 127.635 0)
+			(at 57.15 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13497,7 +13445,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 56.515 127.635 0)
+			(at 57.15 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19640,83 +19588,6 @@
 			(project "nerdqaxe+"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/8ec0a9c6-2b78-44ef-a83d-9047d2828409"
 					(reference "#PWR0146")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 59.055 121.92 90)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "abbf2b12-c2ea-44c6-bc1c-058aa2a33199")
-		(property "Reference" "JP3"
-			(at 56.769 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_2_Open"
-			(at 55.245 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 59.055 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 59.055 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 59.055 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Distributor" "-"
-			(at 59.055 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e5742a01-b0f7-4e12-b7c1-dbc6c7296981")
-		)
-		(pin "1"
-			(uuid "19bb8f1d-50e3-4711-96ff-d4e09736c0c3")
-		)
-		(instances
-			(project "nerdqaxe+"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/8ec0a9c6-2b78-44ef-a83d-9047d2828409"
-					(reference "JP3")
 					(unit 1)
 				)
 			)
