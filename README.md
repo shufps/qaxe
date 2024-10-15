@@ -64,6 +64,14 @@ The QAxe+ and NerdQaxe+ uses 4 ASICs of type BM1368.
 Compilation (Bootloader or CMSIS-DAP) (QAxe, QAxe+)
 ======================================
 
+## Dockered compilation and flashing
+There is a wonderfull Docker based single-script compilation and flash tool for the QAxe Firmware:
+
+https://github.com/AnimaI/QAxe-Docker-Bootloader
+
+## Manual compilation and installation
+
+
 ```bash
 # install curl
 sudo apt install curl
@@ -93,8 +101,7 @@ cd firmware/fw-L072CB
 ./build.sh
 ```
 
-Installation via USB Bootloader on board with `BOOT` button (QAxe, QAxe+)
-===========================================================
+## Installation via USB Bootloader on board with `BOOT` button (QAxe, QAxe+)
 The STM32L072CB variant has an integrated DFU Bootloader that starts when pressing the `BOOT` button during reset.
 
 Afterwards the firmware can be flashed via `dfu-utils`:
