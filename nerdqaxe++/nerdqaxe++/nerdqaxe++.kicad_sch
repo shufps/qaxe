@@ -1850,7 +1850,7 @@
 				)
 			)
 		)
-		(property "Value" "7A"
+		(property "Value" "8A"
 			(at 50.165 49.3776 90)
 			(effects
 				(font
@@ -1894,7 +1894,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "0154007.DR"
+		(property "Manufacturer" "0154008.DR"
 			(at 50.165 52.07 0)
 			(effects
 				(font
@@ -1903,7 +1903,7 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" "F1229CT-ND"
+		(property "OrderNr" "F1239CT-ND"
 			(at 50.165 52.07 0)
 			(effects
 				(font
