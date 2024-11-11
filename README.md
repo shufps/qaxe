@@ -1,3 +1,15 @@
+#  NerdQAxe++
+<img src="https://github.com/user-attachments/assets/e4ff81a3-103d-487d-b92c-4151bf7aecff" width="600px">
+
+The NerdQAxe++ is almost the same as the NerdQAxe+ but with this differences:
+
+- 4 x BM1370
+<img src="https://github.com/user-attachments/assets/e59b47c3-221b-4ca1-80bd-fd26008c72ec" width="300px">
+
+- 4.8TH/s average at ~76W (~15.8J/TH)
+
+**rev5.0** Good to go, no bug found 🥳🚀
+
 # NerdQAxe+
 
 NerdQaxe+ is a Qaxe+ with [Nerdminer](https://github.com/BitMaker-hub/NerdMiner_v2) / [Nerdaxe](https://github.com/BitMaker-hub/NerdAxeUltra) Display and is running the [BitAxe](https://github.com/skot/bitaxe) Firmware as its core.
