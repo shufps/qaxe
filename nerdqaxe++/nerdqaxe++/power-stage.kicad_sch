@@ -1539,6 +1539,12 @@
 		(color 0 0 0 0)
 		(uuid "a0765d98-b85b-4aec-b865-c26c30d069b5")
 	)
+	(junction
+		(at 169.545 103.505)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b715cf32-8a99-43f1-8245-5bcc9849f83f")
+	)
 	(wire
 		(pts
 			(xy 116.84 39.37) (xy 116.84 40.64)
@@ -1628,6 +1634,16 @@
 			(type default)
 		)
 		(uuid "15515fa0-26ab-4b35-95ba-2bd548f2d4e4")
+	)
+	(wire
+		(pts
+			(xy 169.545 103.505) (xy 172.085 103.505)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "188f8d09-a701-4c7d-90f8-a30022c3fa45")
 	)
 	(wire
 		(pts
@@ -2131,6 +2147,18 @@
 			(justify right)
 		)
 		(uuid "aa62b943-70c7-4363-9f02-ba43d1ff3e4d")
+	)
+	(hierarchical_label "TPS_TSEN"
+		(shape output)
+		(at 172.085 103.505 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d54efb0e-1bc5-4339-9226-83dd5ce62271")
 	)
 	(hierarchical_label "FCCM"
 		(shape input)
