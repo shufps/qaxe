@@ -6033,6 +6033,16 @@
 	)
 	(wire
 		(pts
+			(xy 267.97 165.1) (xy 273.685 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f44f452-f255-421c-819b-c3c4d032c91b")
+	)
+	(wire
+		(pts
 			(xy 77.47 109.855) (xy 77.47 112.395)
 		)
 		(stroke
@@ -6730,6 +6740,16 @@
 			(type default)
 		)
 		(uuid "6e1e6bdf-0bbc-447a-b43f-ffd14dd86c52")
+	)
+	(wire
+		(pts
+			(xy 267.97 117.475) (xy 273.685 117.475)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ea9809d-3620-479b-b256-219ca91932e4")
 	)
 	(wire
 		(pts
@@ -7803,6 +7823,16 @@
 	)
 	(wire
 		(pts
+			(xy 267.97 140.97) (xy 273.685 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f29dd419-f6c0-438a-a91b-bb9872b222db")
+	)
+	(wire
+		(pts
 			(xy 107.95 130.175) (xy 96.52 130.175)
 		)
 		(stroke
@@ -7996,6 +8026,28 @@
 		)
 		(uuid "3c6c8137-8b9d-474e-bea2-41e1f9a9bf59")
 	)
+	(label "TPS_TSEN"
+		(at 270.51 117.475 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5427af21-402d-4031-9b7c-a3ef0ab2d267")
+	)
+	(label "TPS_TSEN"
+		(at 270.51 165.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "60692bc4-be96-4a10-9dba-9f076650e835")
+	)
 	(label "TPS_CSP2"
 		(at 100.33 114.935 180)
 		(fields_autoplaced yes)
@@ -8028,6 +8080,17 @@
 			(justify left bottom)
 		)
 		(uuid "87fb5834-1021-47ed-9880-8d9a9bd07bcc")
+	)
+	(label "TPS_TSEN"
+		(at 270.51 140.97 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8b78cd39-0f0c-4d92-8e53-618294066bfb")
 	)
 	(label "TPS_CSP2"
 		(at 239.395 137.795 180)
@@ -18274,6 +18337,16 @@
 			)
 			(uuid "5ee658da-dc17-411a-b495-f9ad21658589")
 		)
+		(pin "TPS_TSEN" output
+			(at 267.97 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "46565604-2542-4b59-8050-1dce5a63d645")
+		)
 		(instances
 			(project "nerdqaxe++"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/8ec0a9c6-2b78-44ef-a83d-9047d2828409"
@@ -18382,6 +18455,16 @@
 			)
 			(uuid "a97e88f6-8d35-4f90-9360-9220c2f96c73")
 		)
+		(pin "TPS_TSEN" output
+			(at 267.97 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "df8019f8-752a-4379-9275-a2460cc549bb")
+		)
 		(instances
 			(project "nerdqaxe++"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/8ec0a9c6-2b78-44ef-a83d-9047d2828409"
@@ -18489,6 +18572,16 @@
 				(justify left)
 			)
 			(uuid "d2bfe40f-b413-4a2a-8d2f-e87e7ab047a2")
+		)
+		(pin "TPS_TSEN" output
+			(at 267.97 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "55d5aea8-bb37-4443-890f-0c1c3b899957")
 		)
 		(instances
 			(project "nerdqaxe++"
