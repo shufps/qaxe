@@ -252,95 +252,62 @@
       "mfg": "",
       "mpn": ""
     },
+    "layer_pairs": [],
     "layer_presets": [
       {
         "activeLayer": -2,
         "layers": [
-          35,
-          37,
-          44
+          5,
+          13,
+          25
         ],
         "name": "silk",
         "renderLayers": [
-          125,
-          126,
-          127,
-          128,
-          129,
-          130,
-          133,
-          134,
-          135,
-          136,
-          137,
-          138,
-          140,
-          141,
-          142,
-          143,
-          144,
-          145,
-          146,
-          147,
-          148,
-          149,
-          150,
-          151,
-          152,
-          153,
-          154,
-          155,
-          157,
-          158,
-          159,
-          160,
-          161,
-          165
+          "vias",
+          "footprint_text",
+          "footprint_anchors",
+          "ratsnest",
+          "grid",
+          "footprints_front",
+          "footprints_back",
+          "footprint_values",
+          "footprint_references",
+          "tracks",
+          "drc_errors",
+          "drawing_sheet",
+          "bitmaps",
+          "pads",
+          "zones",
+          "drc_warnings",
+          "conflict_shadows"
         ]
       },
       {
         "activeLayer": -2,
         "layers": [
-          34,
-          36,
-          44
+          7,
+          15,
+          25
         ],
         "name": "silk-back",
         "renderLayers": [
-          125,
-          126,
-          127,
-          128,
-          129,
-          130,
-          133,
-          134,
-          135,
-          136,
-          137,
-          138,
-          140,
-          141,
-          142,
-          143,
-          144,
-          145,
-          146,
-          147,
-          148,
-          149,
-          150,
-          151,
-          152,
-          153,
-          154,
-          155,
-          157,
-          158,
-          159,
-          160,
-          161,
-          165
+          "vias",
+          "footprint_text",
+          "footprint_anchors",
+          "ratsnest",
+          "grid",
+          "footprints_front",
+          "footprints_back",
+          "footprint_values",
+          "footprint_references",
+          "tracks",
+          "drc_errors",
+          "drawing_sheet",
+          "bitmaps",
+          "pads",
+          "zones",
+          "drc_warnings",
+          "conflict_shadows"
         ]
       }
     ],
@@ -537,10 +504,15 @@
       "duplicate_sheet_names": "error",
       "endpoint_off_grid": "ignore",
       "extra_units": "error",
+      "footprint_filter": "ignore",
+      "footprint_link_issues": "warning",
+      "four_way_junction": "ignore",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
+      "label_multiple_wires": "warning",
       "lib_symbol_issues": "ignore",
+      "lib_symbol_mismatch": "warning",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
@@ -553,9 +525,14 @@
       "pin_not_driven": "error",
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
+      "same_local_global_label": "warning",
+      "similar_label_and_power": "warning",
       "similar_labels": "warning",
+      "similar_power": "warning",
       "simulation_model_issue": "ignore",
+      "single_global_label": "ignore",
       "unannotated": "error",
+      "unconnected_wire_endpoint": "warning",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -567,7 +544,7 @@
   },
   "meta": {
     "filename": "nerdqaxe++.kicad_pro",
-    "version": 1
+    "version": 3
   },
   "net_settings": {
     "classes": [
@@ -582,6 +559,7 @@
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.254,
         "via_diameter": 0.8,
@@ -590,7 +568,7 @@
       }
     ],
     "meta": {
-      "version": 3
+      "version": 4
     },
     "net_colors": null,
     "netclass_assignments": null,
@@ -612,6 +590,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
+    "bom_export_filename": "bom.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -749,6 +728,7 @@
       ],
       "filter_string": "",
       "group_symbols": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
@@ -792,6 +772,7 @@
     },
     "page_layout_descr_file": "",
     "plot_directory": "./",
+    "space_save_all_events": true,
     "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -805,7 +786,7 @@
   "sheets": [
     [
       "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
-      "Stammblatt"
+      "Root"
     ],
     [
       "8ec0a9c6-2b78-44ef-a83d-9047d2828409",
