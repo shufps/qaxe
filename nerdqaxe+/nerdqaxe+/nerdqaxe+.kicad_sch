@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55")
 	(paper "A")
 	(title_block
@@ -11,7 +11,9 @@
 	)
 	(lib_symbols
 		(symbol "Connector:Barrel_Jack_Switch"
-			(pin_names hide)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -88,10 +90,10 @@
 						(type background)
 					)
 				)
-				(arc
-					(start -3.302 3.175)
-					(mid -3.9343 2.54)
-					(end -3.302 1.905)
+				(polyline
+					(pts
+						(xy -3.81 -2.54) (xy -2.54 -2.54) (xy -1.27 -1.27) (xy 0 -2.54) (xy 2.54 -2.54) (xy 5.08 -2.54)
+					)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -101,9 +103,21 @@
 					)
 				)
 				(arc
-					(start -3.302 3.175)
+					(start -3.302 1.905)
 					(mid -3.9343 2.54)
-					(end -3.302 1.905)
+					(end -3.302 3.175)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -3.302 1.905)
+					(mid -3.9343 2.54)
+					(end -3.302 3.175)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -122,6 +136,17 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(rectangle
+					(start 3.683 3.175)
+					(end -3.302 1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
@@ -148,29 +173,6 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -3.81 -2.54) (xy -2.54 -2.54) (xy -1.27 -1.27) (xy 0 -2.54) (xy 2.54 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.683 3.175)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 			)
 			(symbol "Barrel_Jack_Switch_1_1"
 				(pin passive line
@@ -184,24 +186,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -227,10 +211,31 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:Fuse"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -361,11 +366,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Diode:5KPxxA"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -494,6 +504,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bitaxe:polarity"
 			(exclude_from_sim no)
@@ -552,6 +563,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
@@ -631,7 +643,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "GND"
 						(effects
 							(font
@@ -648,6 +661,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
@@ -1263,7 +1277,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "366429d3-0b04-4b5a-af9f-869274df5c3d")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR04"
 			(at 55.245 73.025 0)
 			(effects
 				(font
@@ -1334,7 +1348,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3e5ebc9c-2d7b-45b1-a595-71405dd3b56e")
-		(property "Reference" "J3"
+		(property "Reference" "J1"
 			(at 36.3728 46.5582 0)
 			(effects
 				(font
@@ -1437,7 +1451,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "78b8dad5-172a-4fbb-a0fa-b5f4c2b863db")
-		(property "Reference" "D3"
+		(property "Reference" "D1"
 			(at 50.165 62.23 0)
 			(effects
 				(font
@@ -1539,7 +1553,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2e66b1d-53d4-4fb5-85be-f7217978825c")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR03"
 			(at 43.815 64.77 0)
 			(effects
 				(font
@@ -1775,6 +1789,10 @@
 	(sheet
 		(at 82.55 91.44)
 		(size 17.78 26.67)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1804,73 +1822,73 @@
 		)
 		(pin "+1V2" input
 			(at 82.55 97.79 180)
+			(uuid "98d606a4-14c8-4e93-a570-da31e11b5134")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "98d606a4-14c8-4e93-a570-da31e11b5134")
 		)
 		(pin "+1V8" input
 			(at 82.55 99.695 180)
+			(uuid "8686e89b-7475-4951-82ce-5007c2098456")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8686e89b-7475-4951-82ce-5007c2098456")
 		)
 		(pin "+0V8" input
 			(at 82.55 101.6 180)
+			(uuid "cd007b3e-8a5e-4e77-9005-d1c89f30cc24")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "cd007b3e-8a5e-4e77-9005-d1c89f30cc24")
 		)
 		(pin "+3V3" input
 			(at 82.55 103.505 180)
+			(uuid "ed1d9c34-825b-4693-b9a6-e9be321ca291")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ed1d9c34-825b-4693-b9a6-e9be321ca291")
 		)
 		(pin "RXD" output
 			(at 100.33 100.33 0)
+			(uuid "9cf18a49-978f-4321-946d-7ed0648d13d7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "9cf18a49-978f-4321-946d-7ed0648d13d7")
 		)
 		(pin "TXD" input
 			(at 100.33 98.425 0)
+			(uuid "826c94ea-87a1-4949-ac5b-01acf0d6b849")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "826c94ea-87a1-4949-ac5b-01acf0d6b849")
 		)
 		(pin "RESET" input
 			(at 100.33 102.235 0)
+			(uuid "eda17823-c04d-4e4d-b5e3-355ef2b8dd37")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "eda17823-c04d-4e4d-b5e3-355ef2b8dd37")
 		)
 		(instances
 			(project "nerdqaxe+"
@@ -1883,6 +1901,10 @@
 	(sheet
 		(at 82.55 46.355)
 		(size 17.145 33.02)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1912,113 +1934,113 @@
 		)
 		(pin "+1V2" output
 			(at 99.695 52.07 0)
+			(uuid "3b863672-ddbf-482f-9a9b-b4a93e53bf0a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "3b863672-ddbf-482f-9a9b-b4a93e53bf0a")
 		)
 		(pin "+3V3" output
 			(at 99.695 57.785 0)
+			(uuid "bba4c22b-dcce-4596-bd74-6c80522aedb9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "bba4c22b-dcce-4596-bd74-6c80522aedb9")
 		)
 		(pin "+1V8" output
 			(at 99.695 53.975 0)
+			(uuid "8c4154a4-e411-4e41-bd0d-0299c05ea621")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "8c4154a4-e411-4e41-bd0d-0299c05ea621")
 		)
 		(pin "+0V8" output
 			(at 99.695 55.88 0)
+			(uuid "e14aa2a3-8699-4801-a938-9554f6bb819f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "e14aa2a3-8699-4801-a938-9554f6bb819f")
 		)
 		(pin "+5V" output
 			(at 99.695 59.69 0)
+			(uuid "a3b6afa3-baed-4328-be0d-fd6470ad4cbc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "a3b6afa3-baed-4328-be0d-fd6470ad4cbc")
 		)
 		(pin "+12V" input
 			(at 82.55 52.07 180)
+			(uuid "ffdd16e2-d578-47df-b925-fcd7581dabd5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ffdd16e2-d578-47df-b925-fcd7581dabd5")
 		)
 		(pin "SDA" bidirectional
 			(at 99.695 76.835 0)
+			(uuid "55e772a4-52ba-411f-85e6-ada41cad8099")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "55e772a4-52ba-411f-85e6-ada41cad8099")
 		)
 		(pin "SCL" input
 			(at 99.695 74.93 0)
+			(uuid "802e5abb-4d11-4e8a-9319-ad8ff0cd5cff")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "802e5abb-4d11-4e8a-9319-ad8ff0cd5cff")
 		)
 		(pin "LDO_EN" input
 			(at 99.695 62.23 0)
+			(uuid "4677aa43-7c88-4172-805e-b3c304b81e3c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "4677aa43-7c88-4172-805e-b3c304b81e3c")
 		)
 		(pin "VR_RDY" output
 			(at 99.695 66.04 0)
+			(uuid "d8edcad7-35f8-4f68-af7f-b69573176d91")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "d8edcad7-35f8-4f68-af7f-b69573176d91")
 		)
 		(pin "PWR_EN" input
 			(at 99.695 64.135 0)
+			(uuid "6724ea3b-4996-46ba-bcf3-edca103129d4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "6724ea3b-4996-46ba-bcf3-edca103129d4")
 		)
 		(instances
 			(project "nerdqaxe+"
@@ -2031,6 +2053,10 @@
 	(sheet
 		(at 144.78 83.82)
 		(size 39.37 29.845)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2060,113 +2086,113 @@
 		)
 		(pin "+3V3" input
 			(at 144.78 88.9 180)
+			(uuid "7c5cf166-6e88-47f3-a8db-5dcabb4260e5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "7c5cf166-6e88-47f3-a8db-5dcabb4260e5")
 		)
 		(pin "RXD" input
 			(at 144.78 100.33 180)
+			(uuid "5645c952-9ba4-4701-b7ec-741e1ea73c1c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "5645c952-9ba4-4701-b7ec-741e1ea73c1c")
 		)
 		(pin "TXD" output
 			(at 144.78 98.425 180)
+			(uuid "7c8f662a-c469-46aa-87bd-9781946da405")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "7c8f662a-c469-46aa-87bd-9781946da405")
 		)
 		(pin "RESET" output
 			(at 144.78 102.235 180)
+			(uuid "db737479-42b6-40fb-b70e-25007ffed5e0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "db737479-42b6-40fb-b70e-25007ffed5e0")
 		)
 		(pin "+12V" input
 			(at 144.78 85.09 180)
+			(uuid "9b12458f-2414-412a-aae9-d06f891360e1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "9b12458f-2414-412a-aae9-d06f891360e1")
 		)
 		(pin "+5V" input
 			(at 144.78 86.995 180)
+			(uuid "ef46b5ca-d15a-494d-83dc-7f8bc4ef9cc9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ef46b5ca-d15a-494d-83dc-7f8bc4ef9cc9")
 		)
 		(pin "SCL" output
 			(at 144.78 106.045 180)
+			(uuid "e0fe4c68-f112-48fe-9ba5-9ec3762151c6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e0fe4c68-f112-48fe-9ba5-9ec3762151c6")
 		)
 		(pin "SDA" bidirectional
 			(at 144.78 107.95 180)
+			(uuid "e03bfdb1-56f7-4104-99b0-2aac0933382d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e03bfdb1-56f7-4104-99b0-2aac0933382d")
 		)
 		(pin "LDO_EN" output
 			(at 144.78 92.71 180)
+			(uuid "dd0ef59f-3786-40f8-8c56-86621b625185")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "dd0ef59f-3786-40f8-8c56-86621b625185")
 		)
 		(pin "VR_RDY" input
 			(at 144.78 94.615 180)
+			(uuid "68554d21-97bd-4d02-88b1-ea1c2fef0442")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "68554d21-97bd-4d02-88b1-ea1c2fef0442")
 		)
 		(pin "PWR_EN" output
 			(at 144.78 90.805 180)
+			(uuid "aa463c36-0080-4893-8f7e-83a28aa99587")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "aa463c36-0080-4893-8f7e-83a28aa99587")
 		)
 		(instances
 			(project "nerdqaxe+"
@@ -2181,4 +2207,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
