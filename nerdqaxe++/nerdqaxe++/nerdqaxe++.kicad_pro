@@ -594,7 +594,7 @@
       "specctra_dsn": "",
       "step": "../case/qaxe.step",
       "svg": "",
-      "vrml": ""
+      "vrml": "../case/nerdqaxe++.wrl"
     },
     "page_layout_descr_file": ""
   },
