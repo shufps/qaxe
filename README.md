@@ -1,3 +1,9 @@
+# Compatible replacement parts for + and ++
+
+[25MHz Oscillator](https://www.digikey.de/de/products/detail/iqd-frequency-products/LFSPXO076024/8633951?s=N4IgTCBcDaIIwE4wGYC0cBsGAs7UDkAREAXQF8g), Replacement: [OXLTDLJANF-25.000000](https://www.digikey.de/de/products/detail/taitien/OXLTDLJANF-25-000000/13235309?srsltid=AfmBOopcMDw-7vaDW7fInywY2qr_aMaeX0WMDV0aphwuDXjSpvlEyQxF)<br/>
+[0.8V LDO](https://www.digikey.de/de/products/detail/microchip-technology/MCP1824T-0802E-OT/1635455), Replacement: [TPS78408QDBVRQ1](https://www.digikey.com/en/products/detail/texas-instruments/TPS78408QDBVRQ1/13563052)
+
+
 #  NerdQAxe++
 <img src="https://github.com/user-attachments/assets/e4ff81a3-103d-487d-b92c-4151bf7aecff" width="600px">
 
