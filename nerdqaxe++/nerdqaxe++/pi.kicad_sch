@@ -3998,10 +3998,22 @@
 		(uuid "0dcc3652-a612-4cef-99d9-bea908d9b4b5")
 	)
 	(junction
+		(at 93.98 55.245)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2458f625-dcdd-46e8-a9d4-b1b72724c63f")
+	)
+	(junction
 		(at 114.935 69.215)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "36912426-efad-4512-9954-f1c6884fd90c")
+	)
+	(junction
+		(at 160.655 76.835)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4309ef2b-36e9-4dc1-82e3-368a49d13307")
 	)
 	(junction
 		(at 146.685 92.075)
@@ -4014,6 +4026,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6156e630-6d8e-444b-a502-3203a8ef13f5")
+	)
+	(junction
+		(at 153.035 74.295)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "701a7942-a295-4c20-b868-447482131d30")
 	)
 	(junction
 		(at 255.905 147.955)
@@ -4165,7 +4183,7 @@
 	)
 	(wire
 		(pts
-			(xy 141.605 74.295) (xy 154.305 74.295)
+			(xy 141.605 74.295) (xy 153.035 74.295)
 		)
 		(stroke
 			(width 0)
@@ -4215,6 +4233,26 @@
 	)
 	(wire
 		(pts
+			(xy 160.655 71.755) (xy 160.655 76.835)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28c0f252-d6c4-454b-9d3d-16566b4e6ad1")
+	)
+	(wire
+		(pts
+			(xy 160.655 62.23) (xy 160.655 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c0c961a-6daa-426c-b641-ab0d06e29241")
+	)
+	(wire
+		(pts
 			(xy 97.79 79.375) (xy 118.745 79.375)
 		)
 		(stroke
@@ -4232,6 +4270,16 @@
 			(type default)
 		)
 		(uuid "2e6d6bb3-84e9-46ce-85bb-bf06bfde823a")
+	)
+	(wire
+		(pts
+			(xy 153.035 74.295) (xy 167.005 74.295)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33bca36f-8bb4-45db-9ad5-10feae6f2047")
 	)
 	(wire
 		(pts
@@ -4262,6 +4310,16 @@
 			(type default)
 		)
 		(uuid "3962cf0e-67d6-442d-b467-7555c5b0e61e")
+	)
+	(wire
+		(pts
+			(xy 93.98 55.245) (xy 103.505 55.245)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ad08259-1636-4816-b78c-2d9780db110e")
 	)
 	(wire
 		(pts
@@ -4302,6 +4360,16 @@
 			(type default)
 		)
 		(uuid "53d5b86e-101d-4a70-9357-f6c2edca0b49")
+	)
+	(wire
+		(pts
+			(xy 103.505 71.755) (xy 118.745 71.755)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "561f55aa-aea7-4168-ad59-a100f8078e6b")
 	)
 	(wire
 		(pts
@@ -4445,7 +4513,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.665 71.755) (xy 118.745 71.755)
+			(xy 81.28 55.245) (xy 93.98 55.245)
 		)
 		(stroke
 			(width 0)
@@ -4495,6 +4563,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.035 62.23) (xy 153.035 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c6a1bf2-6494-4291-a1bb-8cd2994c3447")
+	)
+	(wire
+		(pts
 			(xy 233.045 86.995) (xy 235.585 86.995)
 		)
 		(stroke
@@ -4515,7 +4593,7 @@
 	)
 	(wire
 		(pts
-			(xy 141.605 76.835) (xy 154.305 76.835)
+			(xy 141.605 76.835) (xy 160.655 76.835)
 		)
 		(stroke
 			(width 0)
@@ -4785,6 +4863,16 @@
 	)
 	(wire
 		(pts
+			(xy 103.505 55.245) (xy 103.505 71.755)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca9312ab-3335-4a42-8a69-3222fabe6d03")
+	)
+	(wire
+		(pts
 			(xy 240.665 53.975) (xy 248.285 53.975)
 		)
 		(stroke
@@ -4955,6 +5043,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.035 71.755) (xy 153.035 74.295)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4e4315d-eee1-4c0c-90a5-cfa64e7a39d9")
+	)
+	(wire
+		(pts
 			(xy 141.605 71.755) (xy 146.685 71.755)
 		)
 		(stroke
@@ -4985,6 +5083,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 64.135) (xy 93.98 65.405)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea3201da-8a0d-432f-9870-b2af9c98fbe1")
+	)
+	(wire
+		(pts
 			(xy 200.025 99.695) (xy 200.025 102.235)
 		)
 		(stroke
@@ -4992,6 +5100,16 @@
 			(type default)
 		)
 		(uuid "eeb48838-65ae-4c3b-bcde-b3fdf71b4c1b")
+	)
+	(wire
+		(pts
+			(xy 93.98 55.245) (xy 93.98 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eff2589f-f9f5-4fc1-8142-b54aa80ebd23")
 	)
 	(wire
 		(pts
@@ -5032,6 +5150,16 @@
 			(type default)
 		)
 		(uuid "fd2d31ab-bb94-4c53-be4c-bc8d642c6ea7")
+	)
+	(wire
+		(pts
+			(xy 160.655 76.835) (xy 167.005 76.835)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdd80b00-c803-4261-8f02-e47422188230")
 	)
 	(wire
 		(pts
@@ -5125,7 +5253,7 @@
 	)
 	(hierarchical_label "SDA"
 		(shape bidirectional)
-		(at 154.305 76.835 0)
+		(at 167.005 76.835 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5191,7 +5319,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape output)
-		(at 154.305 74.295 0)
+		(at 167.005 74.295 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5202,7 +5330,7 @@
 	)
 	(hierarchical_label "RESET"
 		(shape output)
-		(at 113.665 71.755 180)
+		(at 81.28 55.245 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5461,6 +5589,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 253.365 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 253.365 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 253.365 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 253.365 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fc6e3e1a-3d7d-4992-ae0c-cc90c1593ee0")
 		)
@@ -5550,6 +5714,15 @@
 			)
 		)
 		(property "OrderNr" "WM4330-ND"
+			(at 266.065 150.495 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 266.065 150.495 0)
 			(effects
 				(font
@@ -5717,6 +5890,15 @@
 			)
 		)
 		(property "OrderNr" "296-TMP1075NDRLRCT-ND"
+			(at 225.425 56.515 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 225.425 56.515 0)
 			(effects
 				(font
@@ -5957,6 +6139,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 253.365 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 253.365 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 253.365 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 253.365 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "08d1697e-d9ad-45c3-b91e-e3ff9f765906")
 		)
@@ -6036,6 +6254,42 @@
 			)
 		)
 		(property "PARTNO" ""
+			(at 192.405 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 192.405 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 192.405 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 192.405 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 192.405 106.045 0)
 			(effects
 				(font
@@ -6173,6 +6427,42 @@
 			)
 		)
 		(property "Description" ""
+			(at 255.905 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 255.905 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 255.905 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT2K70"
+			(at 255.905 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT2K70CT-ND"
 			(at 255.905 113.665 0)
 			(effects
 				(font
@@ -6330,6 +6620,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 153.035 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "508a9465-4421-4e1d-bf09-32ceb6f4d522")
+		(property "Reference" "#PWR042"
+			(at 153.035 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 153.035 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.035 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.035 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 153.035 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cf7592a2-95e8-406a-bcff-99146e785023")
+		)
+		(instances
+			(project "nerdqaxe++"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
+					(reference "#PWR042")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 62.865 18.415 270)
 		(unit 1)
@@ -6458,6 +6814,72 @@
 			(project "nerdqaxe++"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
 					(reference "#PWR0176")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 160.655 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58bd9b3c-dbee-43fb-9691-b27e3a414b0e")
+		(property "Reference" "#PWR045"
+			(at 160.655 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 160.655 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.655 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.655 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.655 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b8dcf2d4-2e1c-430f-8070-86ddfea4e238")
+		)
+		(instances
+			(project "nerdqaxe++"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -6608,6 +7030,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 225.425 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5e2c56c0-0252-418e-ab14-e9a12ee5274d")
 		)
@@ -6689,6 +7120,15 @@
 			)
 		)
 		(property "Distributor" "X"
+			(at 144.145 64.135 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 144.145 64.135 0)
 			(effects
 				(font
@@ -6993,6 +7433,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 27.94 190.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "8a294018-4d3d-4d92-ae93-c1e7ec5f5dfc")
 		)
@@ -7163,6 +7612,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 159.385 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2b16711d-459d-4130-8a94-e2c19146ee65")
 		)
@@ -7277,6 +7735,15 @@
 		)
 		(property "OrderNr" "2057-PH1-12-UA-ND"
 			(at 60.325 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 60.325 190.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7404,6 +7871,15 @@
 		)
 		(property "OrderNr" "732-61301211821-ND"
 			(at 27.94 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 27.94 181.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7591,6 +8067,112 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 160.655 67.945 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8dc8dcb8-5591-406e-866f-3ef1b3e8fbcc")
+		(property "Reference" "R9"
+			(at 159.385 66.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.3k"
+			(at 159.385 69.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 162.433 67.945 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.655 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.655 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 160.655 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 160.655 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-073K3L"
+			(at 160.655 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-3.30KCRCT-ND"
+			(at 160.655 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "617df0f1-5ffb-420d-a5f8-e6f2ae6c573e")
+		)
+		(pin "2"
+			(uuid "d5596ddd-7c77-4c1b-9105-24191442eaf1")
+		)
+		(instances
+			(project "nerdqaxe++"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 253.365 76.835 0)
 		(mirror y)
@@ -7651,6 +8233,112 @@
 			(project "nerdqaxe++"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
 					(reference "#PWR0209")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 93.98 60.325 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "91018ccd-1b21-4c76-90c2-4ae19f7f8fe6")
+		(property "Reference" "R16"
+			(at 91.44 59.055 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 91.44 61.595 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 95.758 60.325 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 93.98 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 93.98 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 93.98 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT10K0"
+			(at 93.98 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT10K0CT-ND"
+			(at 93.98 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b22a1af-392a-44f3-ac12-36fac80ee240")
+		)
+		(pin "2"
+			(uuid "f9cc2232-68fb-4736-8a43-83f3b5c7b9d6")
+		)
+		(instances
+			(project "nerdqaxe++"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -7911,6 +8599,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 83.185 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 83.185 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT10K0"
+			(at 83.185 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT10K0CT-ND"
+			(at 83.185 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "18728860-d713-41a8-9698-08df870eea6a")
 		)
@@ -8132,6 +8856,15 @@
 			)
 		)
 		(property "OrderNr" "WM4330-ND"
+			(at 266.065 120.015 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 266.065 120.015 0)
 			(effects
 				(font
@@ -8366,6 +9099,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 144.145 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 144.145 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 144.145 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 144.145 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "957778e8-59a5-49dc-95f7-bff601c624b7")
 		)
@@ -8376,6 +9145,112 @@
 			(project "nerdqaxe++"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
 					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 153.035 67.945 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b5f27222-d070-40b3-b3fb-6ce71e6a2a68")
+		(property "Reference" "R8"
+			(at 151.765 66.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.3k"
+			(at 151.765 69.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 154.813 67.945 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 153.035 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 153.035 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 153.035 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 153.035 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-073K3L"
+			(at 153.035 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-3.30KCRCT-ND"
+			(at 153.035 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff0a8a27-7a6f-4da0-bf43-cad2244186ca")
+		)
+		(pin "2"
+			(uuid "e98d0271-ee09-4d51-83b9-1cec24098d53")
+		)
+		(instances
+			(project "nerdqaxe++"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -8612,6 +9487,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 109.855 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b1555599-645a-4c19-9400-f166e795aa31")
 		)
@@ -8827,6 +9711,73 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_3")
+		(lib_id "power:GND")
+		(at 93.98 65.405 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd27c2b6-ff8b-496d-a8e2-7c824af55bd7")
+		(property "Reference" "#PWR046"
+			(at 93.98 71.755 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 93.98 70.485 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 65.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 65.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 93.98 65.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6c07f933-694c-405f-97c1-520942c86fc2")
+		)
+		(instances
+			(project "nerdqaxe++"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9bc1a7d6-07fa-4858-9423-fb2dbf7da294"
+					(reference "#PWR046")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "+3V3_4")
 		(lib_id "power:+3V3")
 		(at 142.875 133.985 90)
@@ -8966,6 +9917,15 @@
 			)
 		)
 		(property "OrderNr" "296-TXU0102DCURCT-ND"
+			(at 210.185 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 210.185 133.985 0)
 			(effects
 				(font
@@ -9262,6 +10222,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 255.905 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 255.905 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT2K70"
+			(at 255.905 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT2K70CT-ND"
+			(at 255.905 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "26e33d0e-e5bb-4996-89c5-4e7ba61ef4ab")
 		)
@@ -9481,6 +10477,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 200.025 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 200.025 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 200.025 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 200.025 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "14e3361c-1906-4cfb-a5ce-cd1824867434")
 		)
@@ -9571,6 +10603,15 @@
 		)
 		(property "OrderNr" "2057-PH1-12-UA-ND"
 			(at 60.325 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 60.325 181.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
