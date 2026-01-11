@@ -14,7 +14,7 @@ Current high-performance design based on 4× BM1370 ASICs.
 - Previous stable version (that was used for most NQ++): [rev5.1](https://github.com/shufps/qaxe/releases/tag/rev5.1)
 - Latest:  [rev5.1.1](https://github.com/shufps/qaxe/releases/tag/rev5.1.1)*
 
-*: contains some improvements but is untested yet.
+*: contains some [improvements](https://github.com/shufps/qaxe/pull/31) but is untested yet.
 
 ## NerdQAxe+
 
