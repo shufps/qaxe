@@ -8616,6 +8616,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 191.135 196.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "eaddec42-977a-43fe-97a1-1ef7854e11d4")
 		)
@@ -8717,6 +8726,15 @@
 		)
 		(property "OrderNr" "490-GRM32ER60G337ME05KCT-ND"
 			(at 326.39 141.605 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X5R"
+			(at 326.39 141.605 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8927,7 +8945,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 99.06 89.535 0)
 			(effects
 				(font
@@ -8936,7 +8954,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "C0805C102J2GECTU"
 			(at 99.06 89.535 0)
 			(effects
 				(font
@@ -8945,8 +8963,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "399-C0805C102J2GECTUCT-ND"
 			(at 99.06 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
+			(at 99.06 89.535 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9054,7 +9081,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "1µ"
+		(property "Value" "1µ/25V"
 			(at 216.535 267.335 0)
 			(effects
 				(font
@@ -9101,6 +9128,42 @@
 			)
 		)
 		(property "PARTNO" ""
+			(at 215.265 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 215.265 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CL21B105KBFNNNE"
+			(at 215.265 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "1276-1029-1-ND"
+			(at 215.265 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 215.265 263.525 0)
 			(effects
 				(font
@@ -9246,7 +9309,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 105.41 151.765 0)
 			(effects
 				(font
@@ -9255,7 +9318,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "C0805C120J5GACTU"
 			(at 105.41 151.765 0)
 			(effects
 				(font
@@ -9264,8 +9327,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "399-C0805C120J5GACTUCT-ND"
 			(at 105.41 151.765 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
+			(at 105.41 151.765 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9561,6 +9633,15 @@
 			)
 		)
 		(property "OrderNr" "296-51986-1-ND"
+			(at 134.62 118.745 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 134.62 118.745 0)
 			(effects
 				(font
@@ -9876,6 +9957,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 88.9 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 88.9 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT100K"
+			(at 88.9 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT100KCT-ND"
+			(at 88.9 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "df856145-a9c7-405d-98d4-55f43626b713")
 		)
@@ -10038,6 +10155,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 189.23 34.925 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "370de490-cce4-4098-98e8-7f6aa31e914f")
 		)
@@ -10138,7 +10264,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22µ/16V"
+		(property "Value" "22µ/25V"
 			(at 229.616 207.518 0)
 			(effects
 				(font
@@ -10147,7 +10273,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
 			(at 227.6602 210.185 0)
 			(effects
 				(font
@@ -10174,7 +10300,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 226.695 206.375 0)
 			(effects
 				(font
@@ -10183,7 +10309,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "CL32B226KAJNNNE"
 			(at 226.695 206.375 0)
 			(effects
 				(font
@@ -10192,7 +10318,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "1276-3392-1-ND"
+			(at 226.695 206.375 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 226.695 206.375 0)
 			(effects
 				(font
@@ -10279,6 +10414,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 101.6 120.015 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c7c38a3b-2fa7-4585-8361-3d813abc38c3")
 		)
@@ -10339,6 +10483,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 111.76 147.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 111.76 147.955 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 111.76 147.955 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT8K06"
+			(at 111.76 147.955 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT8K06CT-ND"
+			(at 111.76 147.955 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10503,6 +10683,15 @@
 		)
 		(property "OrderNr" "565-HHXE250ARA221MHA0GCT-ND"
 			(at 179.705 34.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 179.705 34.925 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10704,6 +10893,42 @@
 			)
 		)
 		(property "Description" ""
+			(at 186.69 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 186.69 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 186.69 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT10K0"
+			(at 186.69 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT10K0CT-ND"
 			(at 186.69 132.08 0)
 			(effects
 				(font
@@ -11247,6 +11472,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 168.91 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 168.91 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CRCW080516K5FKEA"
+			(at 168.91 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "541-16.5KCCT-ND"
+			(at 168.91 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "81ebb9c8-52da-4820-bc4e-9149073902ea")
 		)
@@ -11336,6 +11597,15 @@
 		)
 		(property "OrderNr" "490-GRM32ER60G337ME05KCT-ND"
 			(at 309.88 141.605 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X5R"
+			(at 309.88 141.605 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11480,7 +11750,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 180.34 131.445 0)
 			(effects
 				(font
@@ -11489,7 +11759,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "C0805C102J2GECTU"
 			(at 180.34 131.445 0)
 			(effects
 				(font
@@ -11498,8 +11768,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "399-C0805C102J2GECTUCT-ND"
 			(at 180.34 131.445 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
+			(at 180.34 131.445 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11675,7 +11954,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1µ"
+		(property "Value" "1µ/25V"
 			(at 128.27 160.655 90)
 			(effects
 				(font
@@ -11711,7 +11990,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 129.54 161.925 0)
 			(effects
 				(font
@@ -11720,7 +11999,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "CL21B105KBFNNNE"
 			(at 129.54 161.925 0)
 			(effects
 				(font
@@ -11729,8 +12008,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "1276-1029-1-ND"
 			(at 129.54 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 129.54 161.925 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11835,6 +12123,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 350.52 149.225 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "18af669e-1ff6-46ca-98b4-ef480b7d0a77")
 		)
@@ -11919,6 +12216,15 @@
 		)
 		(property "OrderNr" "541-10524-1-ND"
 			(at 160.02 147.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 160.02 147.955 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12054,6 +12360,42 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 89.535 149.225 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 89.535 149.225 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CL21C220JBANFNC"
+			(at 89.535 149.225 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "1276-2606-1-ND"
+			(at 89.535 149.225 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
 			(at 89.535 149.225 0)
 			(effects
 				(font
@@ -12265,6 +12607,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 89.535 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CL21C220JBANFNC"
+			(at 89.535 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "1276-2606-1-ND"
+			(at 89.535 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
+			(at 89.535 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "69888f7c-cce0-4512-b672-022944ea3ce4")
 		)
@@ -12433,7 +12811,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10µ"
+		(property "Value" "10µ/25V"
 			(at 172.466 204.978 0)
 			(effects
 				(font
@@ -12478,7 +12856,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "C2012X5R1E106K125AB"
+		(property "Manufacturer" "GRM21BZ71E106KE15L"
 			(at 169.545 203.835 0)
 			(effects
 				(font
@@ -12487,7 +12865,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" "445-5984-1-ND"
+		(property "OrderNr" "490-GRM21BZ71E106KE15LCT-ND"
+			(at 169.545 203.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 169.545 203.835 0)
 			(effects
 				(font
@@ -12585,6 +12972,15 @@
 		)
 		(property "OrderNr" "490-GRM32ER60G337ME05KCT-ND"
 			(at 294.005 141.605 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X5R"
+			(at 294.005 141.605 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12758,7 +13154,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "10µ"
+		(property "Value" "10µ/25V"
 			(at 152.4 41.275 0)
 			(effects
 				(font
@@ -12821,7 +13217,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "C2012X5R1E106K125AB"
+		(property "Manufacturer" "GRM21BZ71E106KE15L"
 			(at 151.13 37.465 0)
 			(effects
 				(font
@@ -12830,7 +13226,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" "445-5984-1-ND"
+		(property "OrderNr" "490-GRM21BZ71E106KE15LCT-ND"
+			(at 151.13 37.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 151.13 37.465 0)
 			(effects
 				(font
@@ -12926,6 +13331,15 @@
 		)
 		(property "OrderNr" "732-7244-1-ND"
 			(at 207.645 196.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 207.645 196.215 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13066,6 +13480,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 83.82 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 83.82 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-07100RL"
+			(at 83.82 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-100CRCT-ND"
+			(at 83.82 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "445aa2d0-bba1-4f5c-81ff-681635a90836")
 		)
@@ -13162,6 +13612,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" "X5R"
+			(at 335.28 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1b7c9fce-0e4d-47ba-8e16-46c8ff97b3d1")
 		)
@@ -13232,7 +13691,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 111.76 158.115 0)
 			(effects
 				(font
@@ -13241,7 +13700,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "C0805C102J2GECTU"
 			(at 111.76 158.115 0)
 			(effects
 				(font
@@ -13250,8 +13709,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "399-C0805C102J2GECTUCT-ND"
 			(at 111.76 158.115 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
+			(at 111.76 158.115 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13412,6 +13880,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 236.855 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 236.855 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 236.855 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 236.855 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "93f76363-508a-427f-8a62-9412bffbf7b6")
 		)
@@ -13481,7 +13985,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 171.45 261.62 0)
 			(effects
 				(font
@@ -13490,7 +13994,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "RMCF0805FT10K0"
 			(at 171.45 261.62 0)
 			(effects
 				(font
@@ -13499,7 +14003,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "RMCF0805FT10K0CT-ND"
+			(at 171.45 261.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 171.45 261.62 0)
 			(effects
 				(font
@@ -13608,7 +14121,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7µ"
+		(property "Value" "4.7µ/16V"
 			(at 133.35 155.575 90)
 			(effects
 				(font
@@ -13644,7 +14157,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 134.62 161.925 0)
 			(effects
 				(font
@@ -13653,7 +14166,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "GRM21BR71C475KE51K"
 			(at 134.62 161.925 0)
 			(effects
 				(font
@@ -13662,8 +14175,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "490-GRM21BR71C475KE51KCT-ND"
 			(at 134.62 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 134.62 161.925 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13873,7 +14395,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 127 170.815 0)
 			(effects
 				(font
@@ -13882,7 +14404,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "CL21B334KBFNNNE"
 			(at 127 170.815 0)
 			(effects
 				(font
@@ -13891,8 +14413,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "1276-1123-1-ND"
 			(at 127 170.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 127 170.815 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14005,6 +14536,15 @@
 			)
 		)
 		(property "Manufacturer" "MCP1824T-0802E/OT"
+			(at 198.755 257.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 198.755 257.175 0)
 			(effects
 				(font
@@ -14126,6 +14666,15 @@
 			)
 		)
 		(property "Manufacturer" "MCP1824T-1202E/OT"
+			(at 255.905 257.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 255.905 257.175 0)
 			(effects
 				(font
@@ -14344,7 +14893,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 201.295 192.405 0)
 			(effects
 				(font
@@ -14353,7 +14902,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "C0805C103J1GECTU"
 			(at 201.295 192.405 0)
 			(effects
 				(font
@@ -14362,7 +14911,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "399-C0805C103J1GECTUCT-ND"
+			(at 201.295 192.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
 			(at 201.295 192.405 0)
 			(effects
 				(font
@@ -14440,6 +14998,15 @@
 			)
 		)
 		(property "Distributor" "-"
+			(at 191.77 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 191.77 125.095 0)
 			(effects
 				(font
@@ -14535,6 +15102,42 @@
 				(hide yes)
 			)
 		)
+		(property "Distributor" "D"
+			(at 179.705 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C0805C104K5RACTU"
+			(at 179.705 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "399-C0805C104K5RACTUCT-ND"
+			(at 179.705 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 179.705 262.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1a8d0831-36ef-4580-b8bb-0a5f9049ea1a")
 		)
@@ -14568,7 +15171,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "1µ"
+		(property "Value" "1µ/25V"
 			(at 275.59 267.335 0)
 			(effects
 				(font
@@ -14615,6 +15218,42 @@
 			)
 		)
 		(property "PARTNO" ""
+			(at 273.685 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 273.685 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CL21B105KBFNNNE"
+			(at 273.685 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "1276-1029-1-ND"
+			(at 273.685 263.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 273.685 263.525 0)
 			(effects
 				(font
@@ -14760,7 +15399,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 213.995 211.455 0)
 			(effects
 				(font
@@ -14769,7 +15408,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "RMCF0805FT16K2"
 			(at 213.995 211.455 0)
 			(effects
 				(font
@@ -14778,7 +15417,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "RMCF0805FT16K2CT-ND"
+			(at 213.995 211.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 213.995 211.455 0)
 			(effects
 				(font
@@ -14847,6 +15495,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 168.91 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 168.91 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 168.91 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-0724K3L"
+			(at 168.91 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-24.3KCRCT-ND"
+			(at 168.91 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14982,6 +15666,42 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 89.535 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 89.535 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "CL21C220JBANFNC"
+			(at 89.535 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "1276-2606-1-ND"
+			(at 89.535 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
 			(at 89.535 144.145 0)
 			(effects
 				(font
@@ -15152,6 +15872,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" "X5R"
+			(at 286.385 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0f4108c0-f334-431b-ac0b-6fdac5a53440")
 		)
@@ -15241,6 +15970,15 @@
 			)
 		)
 		(property "OrderNr" "732-74650194RCT-ND"
+			(at 350.52 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 350.52 133.985 0)
 			(effects
 				(font
@@ -15342,6 +16080,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" "X5R"
+			(at 302.26 141.605 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "446745f6-e710-48f8-93e9-edb7a84118d9")
 		)
@@ -15402,6 +16149,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 83.82 116.205 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 83.82 116.205 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 83.82 116.205 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-0766K5L"
+			(at 83.82 116.205 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-66.5KCRCT-ND"
+			(at 83.82 116.205 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15678,7 +16461,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 77.47 116.205 0)
 			(effects
 				(font
@@ -15687,7 +16470,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "C0805C222J2GACTU"
 			(at 77.47 116.205 0)
 			(effects
 				(font
@@ -15696,8 +16479,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "399-17628-1-ND"
 			(at 77.47 116.205 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "C0G"
+			(at 77.47 116.205 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15840,6 +16632,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 83.82 146.685 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 83.82 146.685 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-07100RL"
+			(at 83.82 146.685 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-100CRCT-ND"
+			(at 83.82 146.685 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5601eaa0-a3b6-4bec-a9f7-cf737a15504f")
 		)
@@ -15910,6 +16738,15 @@
 			)
 		)
 		(property "Distributor" "-"
+			(at 213.995 194.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 213.995 194.945 0)
 			(effects
 				(font
@@ -16117,6 +16954,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 342.9 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 342.9 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805ZT0R00"
+			(at 342.9 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805ZT0R00CT-ND"
+			(at 342.9 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "14883ba7-3d1c-4c14-8ab3-224bd1352d83")
 		)
@@ -16177,6 +17050,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 172.72 120.015 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 172.72 120.015 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 172.72 120.015 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT10K0"
+			(at 172.72 120.015 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT10K0CT-ND"
+			(at 172.72 120.015 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16319,7 +17228,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 213.995 201.295 0)
 			(effects
 				(font
@@ -16328,7 +17237,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "RC0805FR-0784K5L"
 			(at 213.995 201.295 0)
 			(effects
 				(font
@@ -16337,7 +17246,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "311-84.5KCRCT-ND"
+			(at 213.995 201.295 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 213.995 201.295 0)
 			(effects
 				(font
@@ -16379,7 +17297,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "10µ"
+		(property "Value" "10µ/25V"
 			(at 158.75 41.275 0)
 			(effects
 				(font
@@ -16442,7 +17360,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "C2012X5R1E106K125AB"
+		(property "Manufacturer" "GRM21BZ71E106KE15L"
 			(at 157.48 37.465 0)
 			(effects
 				(font
@@ -16451,7 +17369,16 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" "445-5984-1-ND"
+		(property "OrderNr" "490-GRM21BZ71E106KE15LCT-ND"
+			(at 157.48 37.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
 			(at 157.48 37.465 0)
 			(effects
 				(font
@@ -16549,6 +17476,15 @@
 		)
 		(property "OrderNr" "490-GRM32ER60G337ME05KCT-ND"
 			(at 318.77 141.605 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X5R"
+			(at 318.77 141.605 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16818,6 +17754,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 121.92 153.035 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 121.92 153.035 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 121.92 153.035 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RC0805FR-072K55L"
+			(at 121.92 153.035 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "311-2.55KCRCT-ND"
+			(at 121.92 153.035 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17121,6 +18093,15 @@
 			)
 		)
 		(property "OrderNr" "1727-5841-1-ND"
+			(at 201.295 211.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 201.295 211.455 0)
 			(effects
 				(font
@@ -17464,6 +18445,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 105.41 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 105.41 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 105.41 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805FT121K"
+			(at 105.41 89.535 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805FT121KCT-ND"
+			(at 105.41 89.535 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17869,6 +18886,42 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 345.44 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Distributor" "D"
+			(at 345.44 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RMCF0805ZT0R00"
+			(at 345.44 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OrderNr" "RMCF0805ZT0R00CT-ND"
+			(at 345.44 160.655 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "56812a21-e6f4-4b5f-b511-08f73b8734c5")
 		)
@@ -18079,6 +19132,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 230.505 196.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "48c6e7eb-393c-4213-97f7-e179c833be25")
 		)
@@ -18166,6 +19228,15 @@
 		)
 		(property "OrderNr" "541-10524-1-ND"
 			(at 160.02 145.415 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 160.02 145.415 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18273,7 +19344,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1µ"
+		(property "Value" "1µ/25V"
 			(at 138.43 158.115 90)
 			(effects
 				(font
@@ -18309,7 +19380,7 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" ""
+		(property "Distributor" "D"
 			(at 139.7 161.925 0)
 			(effects
 				(font
@@ -18318,7 +19389,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "CL21B105KBFNNNE"
 			(at 139.7 161.925 0)
 			(effects
 				(font
@@ -18327,8 +19398,17 @@
 				(hide yes)
 			)
 		)
-		(property "OrderNr" ""
+		(property "OrderNr" "1276-1029-1-ND"
 			(at 139.7 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" "X7R"
+			(at 139.7 161.925 90)
 			(effects
 				(font
 					(size 1.27 1.27)

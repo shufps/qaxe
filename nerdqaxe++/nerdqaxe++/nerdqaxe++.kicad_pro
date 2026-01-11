@@ -109,6 +109,7 @@
         "solder_mask_bridge": "error",
         "starved_thermal": "ignore",
         "text_height": "warning",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -266,6 +267,7 @@
     "layer_presets": [
       {
         "activeLayer": -2,
+        "flipBoard": false,
         "layers": [
           5,
           13,
@@ -294,6 +296,7 @@
       },
       {
         "activeLayer": -2,
+        "flipBoard": false,
         "layers": [
           7,
           15,
@@ -543,6 +546,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -733,6 +737,12 @@
           "group_by": false,
           "label": "Field7",
           "name": "Field7",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "temp-coefficient",
+          "name": "temp-coefficient",
           "show": false
         }
       ],

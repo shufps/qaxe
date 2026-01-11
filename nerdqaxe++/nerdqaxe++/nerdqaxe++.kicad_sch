@@ -1591,6 +1591,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 25.4 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3_2"
 			(uuid "5b49cbae-fe6b-406d-8102-983424737cc4")
 		)
@@ -1685,6 +1694,15 @@
 			)
 		)
 		(property "OrderNr" "SMBJ12ALFCT-ND"
+			(at 55.245 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
 			(at 55.245 58.42 0)
 			(effects
 				(font
@@ -1843,6 +1861,15 @@
 				(hide yes)
 			)
 		)
+		(property "temp-coefficient" ""
+			(at 85.09 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "nerdqaxe++"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -1924,6 +1951,15 @@
 		)
 		(property "OrderNr" "F1239CT-ND"
 			(at 50.165 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "temp-coefficient" ""
+			(at 50.165 52.07 90)
 			(effects
 				(font
 					(size 1.27 1.27)
