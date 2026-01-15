@@ -1583,6 +1583,10 @@
 		(color 0 0 0 0)
 		(uuid "b715cf32-8a99-43f1-8245-5bcc9849f83f")
 	)
+	(no_connect
+		(at 118.745 99.695)
+		(uuid "3ea15a3e-dcad-4840-961a-98147fd2f50b")
+	)
 	(wire
 		(pts
 			(xy 116.84 39.37) (xy 116.84 40.64)
@@ -1915,16 +1919,6 @@
 	)
 	(wire
 		(pts
-			(xy 118.745 99.695) (xy 99.695 99.695)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94ea1b6c-190b-411f-bbd3-9d97cd3c4136")
-	)
-	(wire
-		(pts
 			(xy 108.585 109.855) (xy 108.585 116.205)
 		)
 		(stroke
@@ -2189,17 +2183,6 @@
 			(justify left)
 		)
 		(uuid "d54efb0e-1bc5-4339-9226-83dd5ce62271")
-	)
-	(hierarchical_label "FCCM"
-		(shape input)
-		(at 99.695 99.695 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f8b18baf-cc5e-4a81-87c3-d6edc15806d8")
 	)
 	(symbol
 		(lib_id "power:GND")
