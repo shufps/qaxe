@@ -12,7 +12,7 @@ Current high-performance design based on 4× BM1370 ASICs.
 
 - ~4.8 TH/s at ~76 W (~15.8 J/TH)
 - Previous stable version (that was used for most NQ++): [rev5.1](https://github.com/shufps/qaxe/releases/tag/rev5.1)
-- Latest:  [rev5.1.1](https://github.com/shufps/qaxe/releases/tag/rev5.1.1)*
+- Latest:  [rev5.1.2](https://github.com/shufps/qaxe/releases/tag/rev5.1.2)*
 
 *: contains some [improvements](https://github.com/shufps/qaxe/pull/31) but is untested yet.
 
